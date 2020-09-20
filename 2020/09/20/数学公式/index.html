@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="数学公式：$T(n) &#x3D; \Theta(n)$, $q \in R$          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$          $\sum_1^{\infty}$, $\int_1^\infty$          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$          $\mathbb{abcd}$">
+  <meta name="description" content="数学公式：$T(n) &#x3D; \Theta(n)$, $q \in R$          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$          $\sum_1^{\infty}$, $\int_1^\infty$          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$          $\mathcal{A}$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数学公式">
 <meta property="og:url" content="http://example.com/2020/09/20/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
-<meta property="og:description" content="数学公式：$T(n) &#x3D; \Theta(n)$, $q \in R$          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$          $\sum_1^{\infty}$, $\int_1^\infty$          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$          $\mathbb{abcd}$">
+<meta property="og:description" content="数学公式：$T(n) &#x3D; \Theta(n)$, $q \in R$          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$          $\sum_1^{\infty}$, $\int_1^\infty$          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$          $\mathcal{A}$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-09-20T02:09:52.000Z">
-<meta property="article:modified_time" content="2020-09-20T03:12:02.971Z">
+<meta property="article:modified_time" content="2020-09-20T03:35:43.047Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="公式">
 <meta name="twitter:card" content="summary">
@@ -49,6 +49,9 @@
   
 
 
+  
+    <script src="/lib/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
   
 
 </head>
@@ -229,7 +232,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>数学公式：<br>$T(n) = \Theta(n)$, $q \in R$<br>          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$<br>          $\sum_1^{\infty}$, $\int_1^\infty$<br>          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$<br>          $\mathbb{abcd}$ <a id="more"></a></p>
+    <p>数学公式：<br>$T(n) = \Theta(n)$, $q \in R$<br>          $x_i^2$, $e^{10}$, $(x)$, $[x]$, ${x}$<br>          $\sum_1^{\infty}$, $\int_1^\infty$<br>          $\frac{a}{b}$, $\sqrt[4]{\frac{x}{y}}$<br>          $\mathcal{A}$ <a id="more"></a></p>
 <p>行内公式：<br>$x_{mu}$, $\sigma$, $y=ax+b$,<br>         $\cos 2\theta = \cos^2 \theta - \sin^2 \theta = 2 \cos^2 \theta$,<br>         $M(\beta^{\ast}(D),D) \subseteq C$ </p>
 <p>行间公式：</p>
 <script type="math/tex; mode=display">\sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6}</script><script type="math/tex; mode=display">x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}</script><script type="math/tex; mode=display">
@@ -385,6 +388,15 @@ n/2,  & \text{if $n$ is even} \\
 
 <nav id="article-nav">
   
+    <a href="/2020/09/20/%E6%B5%8B%E8%AF%95/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          测试
+        
+      </div>
+    </a>
+  
   
     <a href="/2020/09/19/%E4%BC%98%E5%8C%96ADMM/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">优化ADMM</div>
@@ -500,23 +512,6 @@ n/2,  & \text{if $n$ is even} \\
 
 <!--  -->
 
-<script>
-  /* 标签页标题切换 */
-  var originTitle = document.title;
-  var titleTime;
-  document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-      document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
-      clearTimeout(titleTime);
-    } else {
-      document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
-      titleTime = setTimeout(function () {
-        document.title = originTitle;
-      }, 2000);
-    }
-  });
-</script>
-
 
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
@@ -568,14 +563,6 @@ n/2,  & \text{if $n$ is even} \\
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">URL</a>
-              </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">optimization</a>
