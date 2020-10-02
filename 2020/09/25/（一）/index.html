@@ -6,25 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>优化ADMM | swt&#39;s blog</title>
+  <title>流形优化整理（一） | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="优化线性优化、 二阶优化、 流形 自动链接：概率论">
+  <meta name="description" content="整理内容来自 Nicolas Boumal 的教材 An Introduction to Optimization on Smooth Manifolds，主要这学期导师开设了这门课的讨论班，通过这整理一下笔记，此外，会从参考教材 Optimization Algorithms on Matrix Manifolds. P.-A.Absil, R.Mahony, R.Sepulchre 补充一些内">
 <meta property="og:type" content="article">
-<meta property="og:title" content="优化ADMM">
-<meta property="og:url" content="http://example.com/2020/09/19/%E4%BC%98%E5%8C%96ADMM/index.html">
+<meta property="og:title" content="流形优化整理（一）">
+<meta property="og:url" content="http://example.com/2020/09/25/%EF%BC%88%E4%B8%80%EF%BC%89/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
-<meta property="og:description" content="优化线性优化、 二阶优化、 流形 自动链接：概率论">
+<meta property="og:description" content="整理内容来自 Nicolas Boumal 的教材 An Introduction to Optimization on Smooth Manifolds，主要这学期导师开设了这门课的讨论班，通过这整理一下笔记，此外，会从参考教材 Optimization Algorithms on Matrix Manifolds. P.-A.Absil, R.Mahony, R.Sepulchre 补充一些内">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/images/cartoon.jpg">
-<meta property="article:published_time" content="2020-09-19T13:07:44.000Z">
-<meta property="article:modified_time" content="2020-09-19T13:17:12.105Z">
+<meta property="og:image" content="http://example.com/images/Retration.jpg">
+<meta property="article:published_time" content="2020-09-25T11:33:24.000Z">
+<meta property="article:modified_time" content="2020-09-26T03:42:06.464Z">
 <meta property="article:author" content="swt_2020">
-<meta property="article:tag" content="optimization">
-<meta property="article:tag" content="paper">
+<meta property="article:tag" content="Optimization">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/images/cartoon.jpg">
+<meta name="twitter:image" content="http://example.com/images/Retration.jpg">
   
     <link rel="alternative" href="/atom.xml" title="swt&#39;s blog" type="application/atom+xml">
   
@@ -86,6 +85,8 @@
 			
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/" target="_blank">随笔</a></li>
 			
+				<li><a href="/tags/Optimization" target="_blank">Optimization</a></li>
+			
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -146,6 +147,8 @@
 			
 				
 			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -161,12 +164,14 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/tags/Optimization">Optimization</a></li>
 		        
 				</ul>
 			</nav>
@@ -182,14 +187,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-优化ADMM" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="流形优化整理-（一）" class="article article-type-流形优化整理 " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      优化ADMM
+      流形优化整理（一）
     </h1>
   
 
@@ -201,8 +206,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/09/19/%E4%BC%98%E5%8C%96ADMM/" class="archive-article-date">
-        <time datetime="2020-09-19T13:07:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-19</time>
+<a href="/2020/09/25/%EF%BC%88%E4%B8%80%EF%BC%89/" class="archive-article-date">
+        <time datetime="2020-09-25T11:33:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-25</time>
 </a>
 
   
@@ -215,7 +220,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">88字</span>
+      <span class="post-count">1.6k字</span>
     </span>
   </span>
 
@@ -224,7 +229,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -235,51 +240,45 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><p>线性优化、 二阶优化、 流形</p>
-<p>自动链接：概率论 <a id="more"></a></p>
-<h3 id="optimization"><a href="#optimization" class="headerlink" title="optimization"></a>optimization</h3><p><em>这是斜体</em> 或 <em>这也是斜体</em><br><strong>这是粗体</strong><br><strong><em>这是加粗斜体</em></strong><br><del>这是删除线</del></p>
-<h4 id="siri"><a href="#siri" class="headerlink" title="siri"></a>siri</h4><ul>
-<li>无序列表项1</li>
-</ul>
-<ul>
-<li>无序列表项2</li>
-</ul>
-<ul>
-<li>无序列表项3</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>表头1</th>
-<th style="text-align:left">表头2</th>
-<th style="text-align:center">表头3</th>
-<th style="text-align:right">表头4</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td style="text-align:left">12</td>
-<td style="text-align:center">25</td>
-<td style="text-align:right">128</td>
-</tr>
-<tr>
-<td>78</td>
-<td style="text-align:left">4456</td>
-<td style="text-align:center">85855</td>
-<td style="text-align:right">123</td>
-</tr>
-<tr>
-<td>962</td>
-<td style="text-align:left">54566</td>
-<td style="text-align:center">788</td>
-<td style="text-align:right">258</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><img src="/images/cartoon.jpg" alt=""></p>
+    <p>整理内容来自 <strong><em>Nicolas Boumal</em></strong> 的教材 <strong><em>An Introduction to Optimization on Smooth Manifolds</em></strong>，主要这学期导师开设了这门课的讨论班，通过这整理一下笔记，此外，会从参考教材 <strong><em>Optimization Algorithms on Matrix Manifolds. P.-A.Absil, R.Mahony, R.Sepulchre</em></strong> 补充一些内容。<a id="more"></a></p>
+<p>这本书前两章主要是一些介绍以及给出了一些流形优化的简单应用，比如主成分分析(PCA)、 低秩矩阵补全(Matrix Completion)等，是一些介绍性内容。 故从第三章 <strong><em>Embedded geometry: first order</em></strong> 开始整理。</p>
+<p><strong>一、 直观上刻画（非线性）空间的光滑性及其上的函数光滑性</strong></p>
+<p>本书主要目标：求解 <script type="math/tex">\min_{x \in \mathcal{M}}  f(x)  \tag{3.1}</script><br>其中$\mathcal{M}$是光滑（大部分是非线性）的空间，$f:\mathcal{M} \rightarrow \mathcal{R}$ 是光滑函数。 换言之，在一个光滑空间中极小化一个光滑函数，并设计算法求解之。</p>
+<p>至于何为光滑空间、 何为在该空间上的光滑函数，还没弄清楚。 这节我们先从直观上进行理解这些概念，当然并不严格，主要为接下来的严格定义提供一个直观感受。</p>
+<p>直观上，我们认为$\mathcal{R}^n$上的单位球$S^{n-1} = \lbrace x \in \mathcal{R}^n: \lVert x \rVert = 1\rbrace$是光滑的非线性空间，接下来从单位球出发，引出一系列概念。</p>
+<p>因为$S^{n-1}$是非线性的，然而在任意一点$x$处都可局部线性化，得到切空间(tangent space) $T_xS^{n-1}$的概念，从这一角度看，局部线性化是光滑空间的主要特征，从而线性空间及其开子集被认为是光滑的。 （注：这节的定义都是不严格的，直观上进行理解）</p>
+<p>函数$f:S^{n-1} \rightarrow \mathcal{R}$ 的光滑性通过在整个空间$\mathcal{R}^n$上的光滑性来刻画，即$f$在$\mathcal{R}^n$上是光滑函数（任意阶连续可微），然后将其限制在$S^{n-1}$上则是光滑函数。该定义主要是为了方便刻画嵌入子流形上的光滑性，事实上$S^{n-1}$是$\mathcal{R}$的嵌入子流形。 什么是嵌入子流形，一般的光滑性定义是什么，等到后面章节具体介绍。</p>
+<p><strong>二、简单引入流形上的算法准备工作</strong></p>
+<p>回顾在一般线性空间$\mathcal{E}$上的优化问题：</p>
+<script type="math/tex; mode=display">\min_{x \in \mathcal{E}} f(x)  \tag{3.4}</script><p>其中$\mathcal{E}$可取为$\mathcal{R}^{n}$或$\mathcal{R}^{n\times p}$。<br>最常用的优化算法是梯度下降法：<br>给一个初始点$x_0 \in \mathcal{E}$，迭代格式为</p>
+<script type="math/tex; mode=display">x_{k+1} = x_k - \alpha_k gradf(x_k) \tag{3.5}</script><p>那如何在流形（图形通常是曲面）上应用梯度下降法？</p>
+<p>我们简单考虑单位球面$S^{n-1}$上光滑函数$f$的优化<script type="math/tex">\min_{x \in S^{n-1}} f(x)  \tag{3.6}</script><br>看看会遇到什么问题：</p>
+<ol>
+<li>函数$f$在$S^{n-1}$梯度$gradf$如何定义？</li>
+<li>假设有了梯度，在球面上任意一点$x$沿着负梯度$-gradf(x)$方向哪怕移动一点点，都会跑出球面。</li>
+</ol>
+<p>先看第二个问题，假设梯度已经有了，在球面上任意一点$x_k$沿着负梯度$-gradf(x_k)$方向移动一段步长得到下一个迭代点。直观上，为了使下一个迭代点仍然在球面上，显然所走路线是一条曲线。 具体怎么刻画呢？</p>
+<p>因为$S^{n-1}$是光滑曲面，在其上任意一点$x$都可局部线性化得切空间$T_xS^{n-1}$，在切空间沿某一方向中进行移动，然后引入在切空间上一点$x$的<strong>retraction</strong>映射概念：$R_x: T_xS^{n-1} \rightarrow S^{n-1}$，将$T_xS^{n-1}$上的点拉回到球面$S^{n-1}$上。 如图所示：<br><img src="/images/Retration.jpg" alt=""></p>
+<p>注：</p>
+<ol>
+<li>Retraction映射的取法有很多种，只要能将切空间中的点拉回球面上就可以了，取法有一定的灵活性。</li>
+<li>理论上先在切空间上移动一段步长得到一点（中间步骤），再经Retration映射拉回到球面上得到下一迭代点。在图形上就是沿着一条曲线到达下一迭代点。</li>
+</ol>
+<p>再看第一个问题，如何求定义在光滑非线性空间中函数的梯度？</p>
+<p>回顾在线性空间 $\mathcal{E}$ 中如何计算光滑函数 $f: \mathcal{E} \rightarrow \mathcal{R}$ 的梯度， 这是数学分析中多元微积分的基本结果， 梯度可通过方向导数来刻画。 </p>
+<p>函数 $f$ 在点$x$处沿方向$v$的方向导数为$Df(x): \mathcal{E} \rightarrow \mathcal{R}$，定义为</p>
+<script type="math/tex; mode=display">Df(x)[v] = \lim_{t\rightarrow 0} \frac{f(x+tv)-f(x)}{t}</script><p>用方向导数定义梯度：</p>
+<script type="math/tex; mode=display">Df(x)[v] = \left< v,gradf(x) \right></script><p>其中$\left&lt; \cdot,\cdot \right&gt;: \mathcal{E} \times \mathcal{E} \rightarrow \mathcal{R}$ 是$\mathcal{E}$上所选择的内积。<br>注：</p>
+<ol>
+<li>从梯度计算方式可以看出，<strong><em>梯度依赖于所选的内积</em></strong>， 这一条再怎么强调也不为过。</li>
+<li>$Df(x): \mathcal{E} \rightarrow \mathcal{R}$ 看成算子的话，具有线性性。</li>
+</ol>
+<p>(i) 令$\mathcal{E} = \mathcal{R}^n$, 取标准内积$\left&lt; u,v \right&gt; = u^Tv$， 则</p>
+<script type="math/tex; mode=display">gradf_i = \left< gradf, e_i \right> = Df(x)[e_i] := \frac{\partial f}{\partial x_i}(x)</script><p>从而,</p>
+<script type="math/tex; mode=display">gradf = [\frac{\partial f}{\partial x_1}, \cdots \frac{\partial f}{\partial x_n}]^T</script><p>(ii) 令$\mathcal{E} = \mathcal{R}^n$, 取$A$-内积 $\left&lt; u,v \right&gt;^A= u^TAv $，其中$A$是对阵正定阵。则</p>
+<script type="math/tex; mode=display">gradf^A_i = gradf(x)^Te_i = gradf(x)^TA(A^{-1}e_i) = \left< gradf(x),A^{-1}e_i \right>^A  = Df(x)[A^{-1}e_i]</script><p>由(i)知，$Df(x)[A^{-1}e_i] = gradf(x)^TA^{-1}e_i$,从而$gradf(x)^A = A^{-1}gradf(x)$.<br>再强调一次，<strong>梯度依赖于所选择的内积</strong>。</p>
+<p>接下来考虑定义$f: S^{n-1}\rightarrow \mathcal{R}$的梯度，类比线性空间中梯度计算公式，主要分成以下两步：<br>(a) 在球面上一点$x$处局部线性化得切空间$T_xS^{n-1}$, 在切空间上定义方向导数。<br>(b) 梯度依赖于内积，在切空间$T_xS^{n-1}$上引入内积。</p>
+<p>对(a)，有了切空间，方向导数类似之前的计算。<br>对(b)，在$S^{n-1}$上任意两点都有不同的切空间，从而对切空间$T_xS^{n-1}$可以定义内积$\left&lt; \cdot,\cdot \right&gt;^x$,内积的选择与$x$有关。</p>
 
     
 
@@ -296,17 +295,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">optimization</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">paper</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Optimization</a>
         		</li>
       		
 		</ul>
 	</div>
 
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Intuition//" class="article-tag-list-link color5">Intuition</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Intuition/Introduction//" class="article-tag-list-link color3">Introduction</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -356,7 +366,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/19/%E4%BC%98%E5%8C%96ADMM/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/09/25/%EF%BC%88%E4%B8%80%EF%BC%89/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -371,18 +381,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/09/20/%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/02/%E5%BC%80%E9%9B%86%EF%BC%8C%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8B%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数学公式
+          开集，闭集整理（下）
         
       </div>
     </a>
   
   
-    <a href="/2020/09/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2020/09/20/%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">测试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -548,15 +558,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">optimization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">paper</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">公式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Optimization</a>
               </li>
             
             <div class="clearfix"></div>
