@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: 随笔 | swt&#39;s blog</title>
+  <title>FOMO Frame | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="swt&#39;s blog">
-<meta property="og:url" content="http://example.com/tags/%E9%9A%8F%E7%AC%94/index.html">
+  <meta name="description" content="本文主要介绍一阶优化方法的框架，主要参考教材 Amir Beck 的 First-Order Methods in Optimization 以及 Dimitri P. Bertsekas的 Convex Analysis and Optimization">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FOMO Frame">
+<meta property="og:url" content="http://example.com/2020/10/09/Frame/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
+<meta property="og:description" content="本文主要介绍一阶优化方法的框架，主要参考教材 Amir Beck 的 First-Order Methods in Optimization 以及 Dimitri P. Bertsekas的 Convex Analysis and Optimization">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-10-09T13:21:42.000Z">
+<meta property="article:modified_time" content="2020-10-09T14:08:48.675Z">
 <meta property="article:author" content="swt_2020">
+<meta property="article:tag" content="FOMO">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="swt&#39;s blog" type="application/atom+xml">
@@ -177,80 +182,200 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="fomo-Frame" class="article article-type-fomo " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/10/04/%E5%BC%80%E9%9B%86%E3%80%81%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
-        <time datetime="2020-10-04T07:16:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-04</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/10/04/%E5%BC%80%E9%9B%86%E3%80%81%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" target="_blank">开集、闭集整理（上）</a>
   
+    <h1 class="article-title" itemprop="name">
+      FOMO Frame
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/10/09/Frame/" class="archive-article-date">
+        <time datetime="2020-10-09T13:21:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-09</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">516字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>本文主要介绍一阶优化方法的框架，主要参考教材 <strong><em>Amir Beck</em></strong> 的 <strong><em>First-Order Methods in Optimization</em></strong> 以及 <strong><em>Dimitri P. Bertsekas</em></strong>的 <strong><em>Convex Analysis and Optimization</em></strong> <a id="more"></a><br>一阶优化方法主要分为以下两部分：<br><strong>理论部分</strong><br>一、回顾<br>引入一些分析、代数上的基本概念，如范数、内积、欧式空间以及对偶空间等，着重回顾微积分和线性代数中常用的概念：开集、闭集，连续性（上半连续、下半连续），上、下极限， $Frechet$ 微分，凸集和凸函数， 对偶空间以及伴随变换等。</p>
+<p>二、 广义实值函数<br>这节第一部分通过闭集引出闭函数的概念，介绍闭函数的相关性质以及保闭运算，将闭函数和连续性联系起来，第二部分通过凸集刻画凸函数，同样介绍凸函数的相关性质以及保凸运算。最后介绍支撑函数的概念。<br><strong>注：</strong> 理论部分概念比较多，而且比较琐碎，但对后面概念的刻画至关重要。</p>
+<p>三、 次梯度（<strong>重点部分</strong>）<br>重点介绍次梯度的定义以及几何刻画，引出次微分，给出大量例子计算次梯度。</p>
+<p>四、 共轭函数<br>介绍共轭函数的定义和几何解释，并将共轭函数和次微分联系起来。</p>
+<p>五、L-光滑函数和强凸函数<br>刻画L-光滑函数的性质以及介绍强凸函数的定义以及其拥有的比较强的性质。</p>
+<p>六、近端（$Proximal$)算子（<strong>重点部分</strong>）<br>主要介绍近端算子的定义以及相应的重要定理，在此基础上引入 $Moreau$ 包，介绍相应的概念。</p>
+<p><strong>算法部分</strong><br>介绍常用的一些算法，并给出算法框架，进行收敛性分析，算法主要如下：<br>1) 原对偶投影次梯度法<br>2）镜像下降法 ($Mirror Descent$)<br>3) 近端梯度法以及分块近端梯度法<br>4）基于对偶的近端梯度法<br>5）$ADMM$ 算法</p>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">FOMO</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/open-set//" class="article-tag-list-link color4">open set</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/open-set/close-set//" class="article-tag-list-link color5">close set</a>
+        			<a href="/categories/Frame//" class="article-tag-list-link color1">Frame</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/10/09/Frame/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/10/04/%E5%BC%80%E9%9B%86%E3%80%81%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开集、闭集整理（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -291,9 +416,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
