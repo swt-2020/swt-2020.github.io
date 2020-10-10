@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>开集、闭集整理（上） | swt&#39;s blog</title>
+  <title>Open set and Close set (1) | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="这篇博客主要为了整理 $\mathbb{R}^n$ 上开集、闭集等各种基本概念和性质，然后过渡到距离空间的开集概念，进一步抽象到拓扑空间的相关概念，这篇博客涉及到的命题、性质等摘自基本的数学分析教材、点集拓扑教材等，主要目的是整理这些概念及其相互关系。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开集、闭集整理（上）">
+<meta property="og:title" content="Open set and Close set (1)">
 <meta property="og:url" content="http://example.com/2020/10/04/%E5%BC%80%E9%9B%86%E3%80%81%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
 <meta property="og:description" content="这篇博客主要为了整理 $\mathbb{R}^n$ 上开集、闭集等各种基本概念和性质，然后过渡到距离空间的开集概念，进一步抽象到拓扑空间的相关概念，这篇博客涉及到的命题、性质等摘自基本的数学分析教材、点集拓扑教材等，主要目的是整理这些概念及其相互关系。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/split.jpg">
 <meta property="article:published_time" content="2020-10-04T07:16:05.000Z">
-<meta property="article:modified_time" content="2020-10-10T08:25:53.056Z">
+<meta property="article:modified_time" content="2020-10-10T08:47:10.465Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -106,7 +106,7 @@
 				
 					<a class="github" href="https://github.com/swt-2020/swt-2020.github.io" title="GitHub" target="_blank"><i class="icon-github"></i></a>
 				
-					<a class="rss" href="#" title="RSS订阅" target="_blank"><i class="icon-rss"></i></a>
+					<a class="zhihu" href="#" title="知乎" target="_blank"><i class="icon-zhihu"></i></a>
 				
 					<a class="mail" href="/xmuswt@163.com" title="NULL" target="_blank"><i class="icon-mail"></i></a>
 				
@@ -153,7 +153,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/swt-2020/swt-2020.github.io" title="GitHub"><i class="icon-github"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="RSS订阅"><i class="icon-rss"></i></a>
+						<a class="zhihu" target="_blank" href="#" title="知乎"><i class="icon-zhihu"></i></a>
 			        
 						<a class="mail" target="_blank" href="/xmuswt@163.com" title="NULL"><i class="icon-mail"></i></a>
 			        
@@ -191,7 +191,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      开集、闭集整理（上）
+      Open set and Close set (1)
     </h1>
   
 
@@ -248,16 +248,16 @@
 <p>开始给出闭集最基本的定义，通过开集来刻画。<br><strong>定义3.1（闭集）</strong> 设 $F\subset \mathbb{R}^n$. 若 $F$ 的补集 $F^c$ 是开集， 则称 $F$ 是闭集。<br>类似开集的基本性质，我们有：<br><strong>定理2.2</strong> 在空间 $\mathbb{R}^n$ 中，<br>(1) $\mathbb{R}^n$, $\emptyset$ 是闭集；<br>(2) 任意多个闭集的交是闭集；<br>(3) 有限多个闭集的并是闭集。<br><strong>注：</strong>无穷多个闭集的并不一定是闭集， 比如取 $\mathbb{R}^1$ 中的闭集 $F_k = [\frac{1}{k+1},\frac{1}{k}]$, 则有</p>
 <script type="math/tex; mode=display">\bigcup\limits_{k=1}^\infty F_k = (0,1].</script><p><strong>例4：</strong>由例1知，除去 $\mathbb{R}^n$ 中的有限多个点所成的集合是开集，则 $\mathbb{R}^n$ 中有限个点所成的集合是闭集。<br><strong>例5：</strong>在 $\mathbb{R}^n$ 中，开球的补集是闭集。</p>
 <p><strong><em>四、闭集的第二种定义方式：引入聚点，导集， 闭包</em></strong></p>
-<p><strong>定义4.1（聚点）</strong> 设 $E\subset \mathbb{R}^n$. 若点 $x \in \mathbb{R}^n$ 有这样的性质：对任意的 $r&gt;0$, $B(x;r)$ 中至少含有 $E$ 中异于 $x$ 的一个点 $y$，即 $B(x;r)\cap (E - \lbrace x \rbrace) \ne \emptyset$. 则称 $x$ 为 $E$ 的聚点（或极限点）。<br>记 $E^\prime = \lbrace E\text{的所有极限点}\rbrace$, 称其为 $E$ 的导集。<br><strong>注：</strong><br>1) $x\in E^\prime$ $\Leftrightarrow$ $\forall r&gt;0$, $B(x;r)$ 中至少含有 $E$ 中一个点 $y \ne x$.<br>$\quad\quad\quad\quad$ $\Leftrightarrow$ $\forall r&gt;0$, $B(x;r)$ 含有 $E$ 中无穷多个点。<br>2) $x \notin E^\prime$ $\Leftrightarrow$ $\exists r&gt;0$, s.t. $B(x;r) \cap (E - \lbrace x \rbrace) = \emptyset$</p>
+<p><strong>定义4.1（聚点）</strong> 设 $E\subset \mathbb{R}^n$. 若点 $x \in \mathbb{R}^n$ 有这样的性质：对任意的 $r&gt;0$, $B(x;r)$ 中至少含有 $E$ 中异于 $x$ 的一个点 $y$，即 $B(x;r)\cap (E - \lbrace x \rbrace) \ne \emptyset$. 则称 $x$ 为 $E$ 的聚点（或极限点）。<br>记 $E^\prime = \lbrace E\text{的所有极限点}\rbrace$, 称其为 $E$ 的导集。<br><strong>注：</strong><br>1) $x\in E^\prime$ $\Leftrightarrow$ $\forall r&gt;0$, $B(x;r)$ 中至少含有 $E$ 中一个点 $y \ne x$.<br>$\quad\qquad\quad $ $\Leftrightarrow$ $\forall r&gt;0$, $B(x;r)$ 含有 $E$ 中无穷多个点。<br>2) $x \notin E^\prime$ $\Leftrightarrow$ $\exists r&gt;0$, s.t. $B(x;r) \cap (E - \lbrace x \rbrace) = \emptyset$</p>
 <p>接下来用 $E$ 中序列极限的观点来看聚点，正如聚点的另一名称：极限点。<br><strong>定理4.2 设 $E\subset \mathbb{R}^n$， 则 $x \in E^\prime$ 当且仅当 存在点列 $\lbrace x_k \rbrace$ 满足 $x_k \in E$, $x_k \ne x\quad(k=1,2,\cdots)$, 使得 $x_k \rightarrow x \ (k \rightarrow \infty)$.</strong><br><strong>注：</strong><br>1) 有限集不存在聚点。<br>2) $E$ 的聚点不一定在 $E$ 中，如在 $\mathbb{R}^1$ 中取 $E = (0,1)$, 则$E^\prime = [0,1]$, 但0，1不在 $E$ 中。<br>3) 若 $E$ 中的点 $x$ 不是 $E$ 的聚点，即 $x \in E-E^\prime$, 则称 $x$ 为 $E$ 的孤立点。 $E-E^\prime = \lbrace E \text{的所有孤立点}\rbrace$，记其为 $E$ 的孤立点集。<br>如取 $E = \lbrace 1,\frac12,\cdots,\frac1k,\cdots\rbrace$，则 $E^\prime = \lbrace 0\rbrace$, 且一切 $\frac1k (k=1,2,\cdots)$均为 $E$的孤立点。<br>4) $\mathbb{N}^\prime = \emptyset$, $\mathbb{Z}^\prime = \emptyset$, $\mathbb{Q}^\prime = \mathbb{R}$, $(\mathbb{R}-\mathbb{Q})^\prime = \mathbb{R}$, $\mathbb{R}^\prime = \mathbb{R}$.</p>
 <p>导集的运算性质：<br><strong>性质4.3（导集运算性质）</strong> 设 $A,B \subset \mathbb{R}^n$，则<br>1）$\emptyset^\prime = \emptyset$; $\qquad$ 2) $A\subset B$ $\Rightarrow$ $A^\prime \subset B^\prime$;<br>3) $(A\cup B)^\prime = A^\prime \cup B^\prime$;$\quad$  $(A\cap B)^\prime \subset A^\prime \cap B^\prime$;<br>4) $(A^\prime)^\prime \subset A \cup A^\prime$.<br><strong>注：</strong>3)和4)的包含关系取不到等号，构造如下两个例子：<br>例1：在 $\mathbb{R}$ 中，取 $A=[0,1)$, $B=(1,2]$, 则 $A^\prime = [0,1]$, $B^\prime = [1,2]$, 但 $A\cap B = \emptyset$.<br>例2：在 $\mathbb{R}$ 中，取 $A=[0,1)\cup \lbrace 2\rbrace$, 则 $A^\prime = [0,1]$, $(A^\prime)^\prime = [0,1]$.</p>
 <p>接下来通过导集定义闭集的概念。<br><strong>定理4.4</strong> 设 $E \subset \mathbb{R}^n$, 则 $E$ 是闭集 的充要条件是 $E^\prime \subset E$ (即 $E$ 包含 $E$ 的一切聚点)。<br><strong>注：</strong><br>1) 有限点集 $E$ 是闭集， 这时 $E^\prime = \emptyset$.<br>2) 孤立点集不一点是闭集，如 $E = \lbrace 1,\frac12,\cdots,\frac1k,\cdots\rbrace$，这时 $E^\prime = \lbrace 0\rbrace$.<br>3) 对任意集合 $E\subset \mathbb{R}^n$, $E$ 的导集 $E^\prime$是闭集。</p>
-<p><strong>（重要！！！）用收敛点列的极限来刻画闭集概念</strong>，这也是分析过程中最常用的验证技巧。<br><strong>定理4.5</strong> <strong>设 $E \subset \mathbb{R}^n$, 则 $E$ 是闭集 当且仅当 $E$ 中的任何收敛点列的极限必在 $E$ 中。（换一种说法：$E$ 中的序列 $\lbrace x_k \rbrace$ 若收敛到 $x$ 时，则有 $x \in E$）.</strong></p>
+<p><strong>（重要！！！）用收敛点列的极限来刻画闭集概念</strong>，这也是分析过程中最常用的验证技巧。<br><strong>定理4.5</strong> <strong>设 $E \subset \mathbb{R}^n$, 则 $E$ 是闭集 当且仅当 $E$ 中的任何收敛点列的极限必在 $E$ 中。（换一种等价形式：$E$ 中的序列 $\lbrace x_k \rbrace$ 若收敛到 $x$ 时，则有 $x \in E$）.</strong></p>
 <p><strong><em>五、闭包基本概念</em></strong></p>
 <p><strong>定义5.1:</strong> 设 $E \subset \mathbb{R}^n$, 记 $\overline{E} = E \cup E^\prime$, 称 $\bar{E}$ 为 $E$ 的<strong>闭包</strong>（ 由定理4.4可知，<strong>$E$ 为闭集 当且仅当 $E = \overline{E}$</strong>）。<br><strong>注：</strong><br>1) $E \subset \overline{E}$;<br>2) $\overline{\mathbb{Q}} = \mathbb{R}$, $\overline{\mathbb{R}-\mathbb{Q}} = \mathbb{R}$.<br>3) $\mathbb{R}^n$ 中开球 $B(a;r)$ 的闭包是 闭球$\overline{B}(a;r)$; 从而 $\mathbb{R}^n$ 中球面 $S(a,r)$ 是闭集。</p>
 <p><strong>下面描述闭包的本质特征：</strong><br><strong>定理5.2(闭包的本质特征)</strong> 对任意集合 $E\subset \mathbb{R}^n$,<br>(1) $E$ 的闭包 $\overline{E}$ 都是闭集;<br>(2) $E$ 的闭包等于包含 $E$ 的所有闭集之交，换言之，$\overline{E}$ 是包含 $E$ 内的最小闭集。</p>
 <p>闭包的运算性质：<br><strong>性质5.3（闭包运算性质）</strong> 设 $A,B\subset \mathbb{R}^n$， 则<br>1) $\overline{\emptyset} = \emptyset$;<br>2) $A\subset B$ $\Rightarrow$ $\overline{A} \subset \overline{B}$<br>3) $\overline{A\cup B} = \overline{A}\cup \overline{B}$ $\quad$ $\overline{A\cap B} \subset \overline{A}\cap \overline{B}$;<br>4) $\overline{\overline{A}} = \overline{A}$.<br><strong>注：</strong>3)的包含关系取不到等号，构造如下例子：<br>在 $\mathbb{R}$ 中，取 $A=[0,1)$, $B=(1,2]$, 则 $\overline{A} = [0,1]$, $\overline{B} = [1,2]$, 但 $A\cap B = \emptyset$. </p>
-<p>接下来<strong>（重点！！！）用收敛点列的极限来刻画闭包概念：</strong><br><strong>定理5.4</strong> <strong>设 $E\subset \mathbb{R}^n$, 则<br>$x \in \overline{E}$ 当且仅当 存在 $E$ 中的一个序列 $\lbrace x_k\rbrace$, 它收敛到 $x$. （换一种说法： 对任意 $r&gt;0$, 有 $B(x;r) \cap E \ne \emptyset$.</strong><br><strong>注：</strong> <strong>$x \notin \overline{E}$ 当且仅当 存在一个 $r&gt;0$, 使得 $B(x;r) \cap E = \emptyset$.</strong></p>
+<p>接下来<strong>（重点！！！）用收敛点列的极限来刻画闭包概念：</strong><br><strong>定理5.4</strong> <strong>设 $E\subset \mathbb{R}^n$, 则<br>$x \in \overline{E}$ 当且仅当 存在 $E$ 中的一个序列 $\lbrace x_k\rbrace$, 它收敛到 $x$. （换一种等价形式： 对任意 $r&gt;0$, 有 $B(x;r) \cap E \ne \emptyset$.</strong><br><strong>注：</strong> <strong>$x \notin \overline{E}$ 当且仅当 存在一个 $r&gt;0$, 使得 $B(x;r) \cap E = \emptyset$.</strong></p>
 <p><strong><em>六、内点、外点以及边界点</em></strong></p>
 <p>设点集 $E\subset \mathbb{R}^n$，对任意 $x\in \mathbb{R}^n$, 有下面三种情况：<br><strong>(1)内点</strong>  存在 $r&gt;0$，使得 $B(x;r) \subset E$， 则称 $x$ 为 $E$ 的一个内点。<br>记 $E^o = \lbrace E\text{的所有内点}\rbrace$, 称其为 $E$ 的<strong>内部</strong>。<br><strong>(2)外点</strong> 存在 $r&gt;0$，使得 $B(x;r)$ 完全不落在 $E$ 中，即 $B(x;r) \subset E^c$, 这时称 $x$ 为 $E$ 的一个外点，也可以说 $x$ 为 $E^c$ 的一个内点。<br>从而 $(E^c)^o =  \lbrace E\text{的所有外点}\rbrace$, 称其为 $E$ 的<strong>外部</strong>。<br><strong>(3)边界点</strong> 既不是 $E$ 的内点又不是 $E$ 的外点的点称为 $E$ 的边界点，换言之， 对任意 $r&gt;0$, $B(x;r)$ 既包含 $E$ 中的点，又包含 $E^c$ 中的点。<br>记 $\partial E = \lbrace E\text{的边界点的全体}\rbrace$，称其为 $E$ 的<strong>边界</strong>。<br><img src="/images/split.jpg" alt=""><br><strong>注：</strong><br>1) $E^o \subset E$； 从开集的定义2.1知，<strong>$E$ 为开集 当且仅当 $E = E^o$</strong>.<br>2) 内点必属于 $E$, 外点必属于 $E^c$, 但边界点可能属于 $E$, 也可能不属于 $E$.<br>3) 孤立点必是边界点。 [回顾<strong>孤立点定义</strong>：若 存在 $r&gt;0$，使得 $B(x;r)$ 中只有 $x$ 点属于 $E$.]<br>4) 对一切集 $E\subset \mathbb{R}^n$， $E^o$, $(E^c)^o$ 与 $\partial E$互不相交，并且 $\mathbb{R}^n = E^o \cup (E^c)^o \cup \partial E.$</p>
 <p>例6： 若 $E \subset \mathbb{R}^n$, 则 $E^o = E$, $(E^c)^o = \partial E =\emptyset$.<br>例7： 设单点集 $E = \lbrace a \rbrace$, 则 $E^o = \emptyset$, $(E^c)^o = E^c$, $\partial E = E$.<br>例8： 设 $E = B(a;r)$, 则 $E^o = E$, $(E^c)^o = \lbrace x\in \mathbb{R}^n:  \lVert x-a \rVert &gt; r \rbrace$, $\partial E = S(a,r) = \lbrace x \in \mathbb{R}^n: \lVert x-a \rVert = r \rbrace$.</p>
@@ -265,7 +265,7 @@
 <p>由定理6.1 内部和闭包成对偶关系，可将定理5.2、性质5.3简单转化成内部所具有的性质。<br><strong>定理6.2(内部的本质特征)</strong> 对任意集合 $E\subset \mathbb{R}^n$,<br>(1) $E$ 的内部 $E^o$ 是开集;<br>(2) 设 $\mathcal{T}$ 是由 $\mathbb{R}^n$ 中所有开集构成的集族， 则</p>
 <script type="math/tex; mode=display">E^o = \bigcup\limits_{F\in \mathcal{T},F\subset E}F</script><p>即 $E$ 的内部等于包含于 $E$ 的所有开集之并，换言之，$E^o$ 是包含于 $E$ 内的最大开集。 </p>
 <p><strong>性质6.3（内部运算性质）</strong> 设 $A,B\subset \mathbb{R}^n$， 则<br>1）$(\mathbb{R}^n)^o = \mathbb{R}^n$;<br>2) $A\subset B$ $\Rightarrow$ $A^o \subset B^o$;<br>3) $(A\cap B)^o = A^o \cap B^o$, $\quad$ $A^o \cup B^o \subset (A\cup B)^o$;<br>4) $(A^o)^o = A^o$.<br><strong>注：</strong>3)的包含关系取不到等号，构造如下例子：<br>在 $\mathbb{R}$ 中，取 $A=(0,1]$, $B=[1,2)$, 则 $A^o = (0,1)$, $B^o = (1,2)$, 但 $A\cup B = (0,2)$.</p>
-<p><strong>关于闭包，内部，边界之间存在着种种联系，列举如下：</strong><br><strong>定理6.4</strong> 设点集 $A, B \subset \mathbb{R}^n$，则<br>(1) $\partial A = \overline{A} \cap \overline{A^c}= (A^o \cup (A^c)^o)^c = \partial A^c$;<br>(2) $\overline{A} = A^o\cup \partial A$ （不交并）， $A^o =  \overline{A} - \partial A$, $\partial A = \overline{A} - A^o$, 以及 $\partial A$ 是闭集;<br>(3) $\overline{A} = A\cup \partial A$ ， $A^o =  A - \partial A$;<br>(4) $\partial A^o \subset \partial A$, $\partial \overline{A} \subset \partial A$;<br>(5) $\partial (A\cup B) \subset \partial A \cup \partial B $;<br>(6) $\partial (\partial A) \subset \partial A$;<br>(7) $\partial A = \emptyset$ 当且仅当 $A$ 既开又闭;<br>(8) $E$ 为闭集 当且仅当 $\partial E \subset E$.<br> $\quad$ $E$ 为开集 当且仅当 $E \cap \partial E = \emptyset$</p>
+<p><strong>关于闭包，内部，边界之间存在着种种联系，列举如下：</strong><br><strong>定理6.4</strong> 设点集 $A, B \subset \mathbb{R}^n$，则<br>(1) $\partial A = \overline{A} \cap \overline{A^c}= (A^o \cup (A^c)^o)^c = \partial A^c$;<br>(2) $\overline{A} = A^o\cup \partial A$ （不交并）， $A^o =  \overline{A} - \partial A$, $\partial A = \overline{A} - A^o$, 以及 $\partial A$ 是闭集;<br>(3) $\overline{A} = A\cup \partial A$ ， $A^o =  A - \partial A$;<br>(4) $\partial A^o \subset \partial A$, $\partial \overline{A} \subset \partial A$;<br>(5) $\partial (A\cup B) \subset \partial A \cup \partial B $;<br>(6) $\partial (\partial A) \subset \partial A$;<br>(7) $\partial A = \emptyset$ 当且仅当 $A$ 既开又闭;<br>(8) $E$ 为闭集 当且仅当 $\partial E \subset E$.<br> $\ \ \ \ $ $E$ 为开集 当且仅当 $E \cap \partial E = \emptyset$</p>
 
     
 
@@ -606,6 +606,33 @@
                   <i class="icon-link icon"></i>
                 
                 GitHub
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.maki-math.com/" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Maki
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://math.xmu.edu.cn/group/nona/kuidu.html" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Boss_1
+              </a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://www.math.fsu.edu/~whuang2/index.html" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                Boss_2
               </a>
             </li>
           
