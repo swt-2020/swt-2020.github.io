@@ -19,7 +19,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/images/split.jpg">
 <meta property="article:published_time" content="2020-10-04T07:16:05.000Z">
-<meta property="article:modified_time" content="2020-10-11T02:06:39.873Z">
+<meta property="article:modified_time" content="2020-10-11T02:14:38.982Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -238,12 +238,12 @@
   <div class="article-entry" itemprop="articleBody">
     
     <p>这篇博客主要为了整理 $\mathbb{R}^n$ 上开集、闭集等各种基本概念和性质，然后过渡到距离空间的开集概念，进一步抽象到拓扑空间的相关概念，这篇博客涉及到的命题、性质等摘自基本的数学分析教材、点集拓扑教材等，主要目的是整理这些概念及其相互关系。<a id="more"></a></p>
-<p><strong><em>一、引入</em></strong></p>
+<p>{\boldsymbol{一、引入}}</p>
 <p>设 $a \in \mathbb{R}^n$, $r&gt;0$, 定义：<br><strong>（开球）</strong> $B(a;r) = \lbrace x \in \mathbb{R}^n: \lVert x-a \rVert &lt; r \rbrace$<br><strong>（闭球）</strong> $\bar{B}(a;r) = \lbrace x \in \mathbb{R}^n: \lVert x-a \rVert \le r \rbrace$<br><strong>（球面）</strong> $S(a,r) = \lbrace x \in \mathbb{R}^n: \lVert x-a \rVert = r \rbrace$</p>
-<p><strong><em>二、开集</em></strong></p>
+<p>{\Bbb{二、开集}}</p>
 <p><strong>定义2.1（开集）</strong> $E\subset \mathbb{R}^n$ 是开集，若对任意的 $a\in E$, 存在 $r&gt;0$, 使得 $B(a;r) \subset E$.<br><strong>例1：</strong>$E = \mathbb{R}^n-\lbrace a \rbrace$（即 $\mathbb{R}^n$ 挖去任一个点构成的集合） 是开集。<br>可以推广：$\mathbb{R}^n$ 挖去任意有限个点构成的集合仍然是开集。<br><strong>例2：</strong> 开球 $B(a;r)$ 是开集<br><strong>例3：</strong>开区间 $(a,b)$ 是 $\mathbb{R}^1$ 中的开集，不是 $\mathbb{R}^2$ 中的开集。（该例主要为了厘清开集的概念）</p>
 <p>下面给出 $\mathbb{R}^n$ 中开集的基本性质，也是以后定义拓扑的基本出发点。<br><strong>定理2.2（开集基本性质）</strong> 在空间 $\mathbb{R}^n$ 中，<br>(1) $\mathbb{R}^n$, $\emptyset$ 是开集；<br>(2) 任意多个开集的并是开集；<br>(3) 有限多个开集的交是开集。<br><strong>注：</strong>定理2.2(3)中开集的个数必须是有限个，见反例:</p>
-<script type="math/tex; mode=display">\bigcap\limits_{i=1}^\infty B(0;1/i) = \lbrace 0\rbrace</script><p><strong><em>三、闭集的第一种定义方式</em></strong></p>
+<script type="math/tex; mode=display">\bigcap\limits_{i=1}^\infty B(0;1/i) = \lbrace 0\rbrace</script><p>{\scr{三、闭集的第一种定义方式}}</p>
 <p>开始给出闭集最基本的定义，通过开集来刻画。<br><strong>定义3.1（闭集）</strong> 设 $F\subset \mathbb{R}^n$. 若 $F$ 的补集 $F^c$ 是开集， 则称 $F$ 是闭集。<br>类似开集的基本性质，我们有：<br><strong>定理3.2（闭集基本性质）</strong> 在空间 $\mathbb{R}^n$ 中，<br>(1) $\mathbb{R}^n$, $\emptyset$ 是闭集；<br>(2) 任意多个闭集的交是闭集；<br>(3) 有限多个闭集的并是闭集。<br><strong>注：</strong>无穷多个闭集的并不一定是闭集， 比如取 $\mathbb{R}^1$ 中的闭集 $F_k = [\frac{1}{k+1},\frac{1}{k}]$, 则有</p>
 <script type="math/tex; mode=display">\bigcup\limits_{k=1}^\infty F_k = (0,1].</script><p><strong>例4：</strong>由例1知，除去 $\mathbb{R}^n$ 中的有限多个点所成的集合是开集，则 $\mathbb{R}^n$ 中有限个点所成的集合是闭集。<br><strong>例5：</strong>在 $\mathbb{R}^n$ 中，开球的补集是闭集。</p>
 <p><strong><em>四、闭集的第二种定义方式：引入聚点，导集， 闭包</em></strong></p>
