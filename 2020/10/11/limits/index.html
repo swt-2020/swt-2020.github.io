@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://swt-2020.github.io">
-  <title>limits | swt&#39;s blog</title>
+  <title>Limit Superior and Limit Inferior | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材数学分析教程（史济怀，常庚哲），数学分析（陈纪修）。 在介绍上、下极限之前，先引入上、下确界的概念。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="limits">
+<meta property="og:title" content="Limit Superior and Limit Inferior">
 <meta property="og:url" content="https://swt-2020.github.io/2020/10/11/limits/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
 <meta property="og:description" content="这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材数学分析教程（史济怀，常庚哲），数学分析（陈纪修）。 在介绍上、下极限之前，先引入上、下确界的概念。">
@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://swt-2020.github.io/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg">
 <meta property="og:image" content="https://swt-2020.github.io/images/Lim_sup_example.png">
 <meta property="article:published_time" content="2020-10-11T11:36:30.000Z">
-<meta property="article:modified_time" content="2020-10-14T14:01:05.708Z">
+<meta property="article:modified_time" content="2020-10-16T09:18:24.991Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -192,7 +192,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      limits
+      Limit Superior and Limit Inferior
     </h1>
   
 
@@ -218,7 +218,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.7k字</span>
+      <span class="post-count">3.1k字</span>
     </span>
   </span>
 
@@ -227,7 +227,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">12分</span>
+      <span class="post-count">14分</span>
     </span>
   </span>
 </div>
@@ -241,19 +241,22 @@
     <p>这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材<strong><em>数学分析教程（史济怀，常庚哲）</em></strong>，<strong><em>数学分析（陈纪修）</em></strong>。 在介绍上、下极限之前，先引入上、下确界的概念。<a id="more"></a></p>
 <p><strong>一、上确界和下确界</strong></p>
 <p><strong>定义1.1（上确界）</strong> 设 <span class="math inline">\(E \subset \mathbb{R}\)</span> 是非空有上界的集合，实数 <span class="math inline">\(\beta\)</span> 满足下述两个条件：<br />
-(1) <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的上界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \le \beta\)</span>.<br />
+(1) <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的上界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \le \beta\)</span>,<br />
 (2) 任何小于 <span class="math inline">\(\beta\)</span> 的数都不是 <span class="math inline">\(E\)</span> 的上界： 对任意的 <span class="math inline">\(\epsilon &gt; 0\)</span>, 必可找到一个 <span class="math inline">\(x_{\epsilon} \in E\)</span>, 使得 <span class="math inline">\(x_{\epsilon} &gt; \beta - \epsilon.\)</span><br />
 则称 <span class="math inline">\(\beta\)</span> 为集合 <span class="math inline">\(E\)</span> 的<strong>上确界</strong>， 记为 <span class="math inline">\(\beta = \sup E\)</span>.<br />
-<strong>定义1.2（下确界）</strong> 设 <span class="math inline">\(E \subset \mathbb{R}\)</span> 是非空有下界的集合，实数 <span class="math inline">\(\alpha\)</span> 满足下述两个条件：<br />
-(1) <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的下界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \ge \alpha\)</span>.<br />
+<strong>注：</strong><br />
+1) 由定义1.1知，<span class="math inline">\(E\)</span> 的上确界 <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的最小上界;<br />
+2) 由 <span class="math inline">\(\beta = \sup E\)</span> 可知，存在 <span class="math inline">\(x_k \in E(k=1,2,\cdots)\)</span>，使得 <span class="math inline">\(\lim\limits_{k\to \infty} x_k = \beta\)</span>.</p>
+<p><strong>定义1.2（下确界）</strong> 设 <span class="math inline">\(E \subset \mathbb{R}\)</span> 是非空有下界的集合，实数 <span class="math inline">\(\alpha\)</span> 满足下述两个条件：<br />
+(1) <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的下界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \ge \alpha\)</span>,<br />
 (2) 任何大于 <span class="math inline">\(\alpha\)</span> 的数都不是 <span class="math inline">\(E\)</span> 的下界： 对任意的 <span class="math inline">\(\epsilon &gt; 0\)</span>, 必可找到一个 <span class="math inline">\(y_{\epsilon} \in E\)</span>, 使得 <span class="math inline">\(y_{\epsilon} &lt; \alpha + \epsilon.\)</span><br />
 则称 <span class="math inline">\(\alpha\)</span> 为集合 <span class="math inline">\(E\)</span> 的<strong>下确界</strong>， 记为 <span class="math inline">\(\alpha = \inf E\)</span>.<br />
 <strong>注：</strong><br />
-1) <span class="math inline">\(E\)</span> 的上确界 <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的最小上界; <span class="math inline">\(E\)</span> 的下确界 <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的最大下界。<br />
-2) <span class="math inline">\(\sup(-E) = -\inf E\)</span> 或 <span class="math inline">\(\inf (-E) = -\sup E\)</span>.<br />
-3) (<strong>确界存在定理</strong>) 非空有上界的集合必有上确界；非空有下界的集合必有下确界。<br />
-4）若 <span class="math inline">\(E\)</span> 是一个没有上界的集合，则 <span class="math inline">\(\sup E = +\infty\)</span>; 若 <span class="math inline">\(E\)</span> 没有下界，则 <span class="math inline">\(\inf E = -\infty\)</span>.<br />
-例1： <span class="math inline">\(E = (0,1)\)</span>, 这时 <span class="math inline">\(\sup E = 1\)</span>, <span class="math inline">\(\inf E = 0\)</span>.<br />
+1) 由定义1.2知，<span class="math inline">\(E\)</span> 的下确界 <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的最大下界。<br />
+2) 由 <span class="math inline">\(\alpha = \inf E\)</span> 可知，存在 <span class="math inline">\(y_k \in E(k=1,2,\cdots)\)</span>，使得 <span class="math inline">\(\lim\limits_{k\to \infty} y_k = \alpha\)</span>;<br />
+3) <span class="math inline">\(\sup(-E) = -\inf E\)</span> 或 <span class="math inline">\(\inf (-E) = -\sup E\)</span>.<br />
+<strong>补充定义：</strong> 若 <span class="math inline">\(E\)</span> 是一个没有上界的集合，则 <span class="math inline">\(\sup E = +\infty\)</span>; 若 <span class="math inline">\(E\)</span> 没有下界，则 <span class="math inline">\(\inf E = -\infty\)</span>.</p>
+<p>例1： <span class="math inline">\(E = (0,1)\)</span>, 这时 <span class="math inline">\(\sup E = 1\)</span>, <span class="math inline">\(\inf E = 0\)</span>.<br />
 例2： <span class="math inline">\(E = \lbrace \frac1n : n=1,2,\cdots\rbrace\)</span>, 这时 <span class="math inline">\(\sup E = 1\)</span>, <span class="math inline">\(\inf E = 0\)</span>.<br />
 例3： <span class="math inline">\(E = \lbrace \sqrt{n}: n=1,2,\cdots\rbrace\)</span>, 这时 <span class="math inline">\(\sup E = +\infty\)</span>, <span class="math inline">\(\inf E = 1\)</span>.<br />
 </p>
@@ -263,32 +266,39 @@
 (2) 若该数列无上界（下界），必有子列发散至正（负）无穷大, 这时把 <span class="math inline">\(+\infty\)</span> 和 <span class="math inline">\(-\infty\)</span> 也看成是极限点。<br />
 <strong>注：</strong><br />
 1) <strong>Bolzano-Weierstrass定理:</strong> 从任何有界的数列中必可选出一个收敛的子列。<br />
-2）<span class="math inline">\(l (=\text{有限数})\)</span> 为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个极限点 等价于 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项落在 <span class="math inline">\((l - \epsilon, l + \epsilon)\)</span> 中。<br />
-3) <span class="math inline">\(l = +\infty\ (\text{或}-\infty)\)</span> 为极限点 等价于 对任意 <span class="math inline">\(G&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项，使得 <span class="math inline">\(a_n &gt;G\ (\text{或}a_n &lt;-G)\)</span>.<br />
+2) <strong><span class="math inline">\(l\)</span> （有限）为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个极限点 等价于 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项落在 <span class="math inline">\((l - \epsilon, l + \epsilon)\)</span> 中。</strong><br />
+3) <strong><span class="math inline">\(l = +\infty\ (\text{或}-\infty)\)</span> 为极限点 等价于 对任意 <span class="math inline">\(G&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项，使得 <span class="math inline">\(a_n &gt;G\ (\text{或}a_n &lt;-G)\)</span>.</strong><br />
 4）对一个数列而言，极限点可以有无穷多个，比如取 <span class="math inline">\(\lbrace 1,1,2,1,2,3,1,2,3,4,\cdots\rbrace\)</span>.</p>
 <p><strong>定义2.1</strong> 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是一个数列，令 <strong><span class="math inline">\(E = \lbrace \lbrace a_n \rbrace \text{的所有极限点的全体}\rbrace\)</span></strong>. 记 <span class="math display">\[a^\ast = \sup E,\ \  a_\ast = \inf E,\]</span> 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 分别称为数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的<strong>上极限</strong>和<strong>下极限</strong>，记为 <span class="math display">\[a^\ast = \limsup\limits_{n\to \infty} a_n, \ a_\ast = \liminf\limits_{n\to \infty} a_n.\]</span> <strong>注：</strong><br />
-1) <span class="math inline">\(E\)</span> 显然非空。另外，若 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列，则 <span class="math inline">\(E\)</span> 是非空的有界集合，可得上、下极限 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限的。<br />
-2) 上、下极限取值范围为广义实数 <span class="math inline">\(R_{\infty} = R \cup \lbrace +\infty,-\infty\rbrace\)</span>.<br />
-例4： 设数列 <span class="math inline">\(a_n = n^{(-1)^n}\ (n=1,2,\cdots)\)</span>, 由于 <span class="math inline">\(a_{2n} = 2n\)</span>, <span class="math inline">\(a_{2n+1} = \frac{1}{2n+1}\)</span>, 则 <span class="math inline">\(E = \lbrace 0, +\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = 0.\]</span> 例5： 设数列 <span class="math inline">\(a_n = 1+ n\sin\frac{n\pi}{2}\ (n=1,2,\cdots)\)</span>. 简单计算得 <span class="math inline">\(E = \lbrace 1,-\infty,+\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = -\infty.\]</span></p>
-<p><strong>当 <span class="math inline">\(E\)</span> 中元素有限时，<span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 显然落在 <span class="math inline">\(E\)</span> 中，当 <span class="math inline">\(E\)</span> 是一个无穷集合时， <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 是否仍然是 <span class="math inline">\(E\)</span> 中的元素。下面两个定理予以刻画：</strong><br />
-<strong>定理2.2（上极限：重点！！！）</strong> 设 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(E\)</span> 如上所述， 则<br />
+1) <span class="math inline">\(E\)</span> 显然非空。另外，<strong>若 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列，则 <span class="math inline">\(E\)</span> 是非空的有界集合，此时上、下极限 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限的。</strong><br />
+2) 上、下极限取值范围为广义实数 <span class="math inline">\(R_{\infty} = R \cup \lbrace +\infty,-\infty\rbrace\)</span>.</p>
+<p>例4： 设数列 <span class="math inline">\(a_n = n^{(-1)^n}\ (n=1,2,\cdots)\)</span>, 由于 <span class="math inline">\(a_{2n} = 2n\)</span>, <span class="math inline">\(a_{2n+1} = \frac{1}{2n+1}\)</span>, 则 <span class="math inline">\(E = \lbrace 0, +\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = 0.\]</span> 例5： 设数列 <span class="math inline">\(a_n = 1+ n\sin\frac{n\pi}{2}\ (n=1,2,\cdots)\)</span>. 简单计算得 <span class="math inline">\(E = \lbrace 1,-\infty,+\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = -\infty.\]</span></p>
+<p><strong>当 <span class="math inline">\(E\)</span> 中元素有限时，<span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 显然落在 <span class="math inline">\(E\)</span> 中，当 <span class="math inline">\(E\)</span> 是一个无穷集合时， <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 是否仍然是 <span class="math inline">\(E\)</span> 中的元素。下面两个定理予以刻画：</strong></p>
+<p><strong>定理2.2（上极限：重点！！！）</strong> 设 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
 (1) <span class="math inline">\(a^\ast \in E\)</span>;<br />
 (2) 针对 <span class="math inline">\(a^\ast\)</span> 的取值,分成以下三种情况：<br />
-(i) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\(a^\ast\)</span> 的 <span class="math inline">\(\epsilon\)</span> 邻域 <span class="math inline">\((a^\ast - \epsilon, a^\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((a^\ast + \epsilon,+\infty)\)</span>;<br />
+(i) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\((a^\ast - \epsilon, a^\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((a^\ast + \epsilon,+\infty)\)</span>;<br />
 (ii) 当 <span class="math inline">\(a^\ast = +\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项大于 <span class="math inline">\(N\)</span>;<br />
 (iii) 当 <span class="math inline">\(a^\ast = -\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(-\infty\)</span> 为极限。<br />
-</p>
+具体证明见：<a href="https://swt-2020.github.io/limit/Thm_2.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_2.2.pdf</a> <strong>注：</strong><br />
+1) 由定理2.2(1)知，<span class="math inline">\(a^\ast = \max E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的上极限为它的所有收敛子列极限中的最大值。换言之，上极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
+2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a^\ast = \limsup\limits_{n\to \infty} a_n\)</span> 等价于<br />
+     (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &lt; a^\ast + \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a^\ast + \epsilon\)</span> 右边）;<br />
+     (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &gt; a^\ast - \epsilon\)</span>.<br />
+具体证明见：<a href="https://swt-2020.github.io/open_set/Remark_2.pdf" class="uri">https://swt-2020.github.io/open_set/Remark_2.pdf</a></p>
 <p>类似的，对下极限我们有：<br />
-<strong>定理2.3（下极限：重点！！！）</strong> 设 <span class="math inline">\(a_\ast\)</span> 和 <span class="math inline">\(E\)</span> 如上所述， 则<br />
+<strong>定理2.3（下极限：重点！！！）</strong> 设 <span class="math inline">\(a_\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
 (1) <span class="math inline">\(a_\ast \in E\)</span>;<br />
 (2) 针对 <span class="math inline">\(a_\ast\)</span> 的取值,分成以下三种情况：<br />
 (i) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\(a_\ast\)</span> 的 <span class="math inline">\(\epsilon\)</span> 邻域 <span class="math inline">\((a_\ast - \epsilon, a_\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((-\infty, a_\ast -\epsilon)\)</span>;<br />
 (ii) 当 <span class="math inline">\(a_\ast = -\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项小于 <span class="math inline">\(-N\)</span>;<br />
 (iii) 当 <span class="math inline">\(a_\ast = +\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(+\infty\)</span> 为极限。<br />
 <strong>注：</strong><br />
-1) 由定理2.2(1)知，<span class="math inline">\(a^\ast = \max E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的上极限为它的所有收敛子列极限中的最大值。换言之，上极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
-2) 由定理2.3(1)知，<span class="math inline">\(a_\ast = \min E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的下极限为它的所有收敛子列极限中的最小值。换言之，下极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
-3) 当 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限值，并且对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中除有限项外都落在 <span class="math inline">\((a_\ast -\epsilon, a^\ast+\epsilon)\)</span> 中，如下图阴影部分所示:<br />
+1) 由定理2.3(1)知，<span class="math inline">\(a_\ast = \min E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的下极限为它的所有收敛子列极限中的最小值。换言之，下极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
+2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a_\ast = \limsup\limits_{n\to \infty} a_n\)</span> 等价于<br />
+     (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &gt; a_\ast - \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a_\ast - \epsilon\)</span> 左边）;<br />
+     (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &lt; a_\ast + \epsilon\)</span>.</p>
+<p><strong>（重点！！！）由定理2.2和定理2.3可知，当 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限值，并且对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中除有限项外都落在 <span class="math inline">\((a_\ast -\epsilon, a^\ast+\epsilon)\)</span> 中，如下图阴影部分所示:</strong><br />
 （该图来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>)<br />
 <img src="/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg" /><br />
 </p>
@@ -327,8 +337,11 @@
 (2) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\delta &gt;0\)</span>, 使得当 <span class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时， 有 <span class="math inline">\(f(x) &lt; a^\ast + \epsilon\)</span>;<br />
 (3) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\delta &gt;0\)</span>, 使得当 <span class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时， 有 <span class="math inline">\(f(x) &gt; a_\ast - \epsilon\)</span>.</p>
 <p><strong>类似的，将上、下极限概念推广到高维空间中，为接下来考虑半连续性做铺垫。</strong><br />
-设 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的聚点， 记 <span class="math inline">\(I = B(x_0;\epsilon)\cap (D-\lbrace x_0\rbrace)\)</span>, 同理构造 <span class="math display">\[ E = \lbrace l\in R_\infty: \text{存在数列}x_n\in I,x_n\to x_0,\text{使得}f(x_n)\to l\rbrace\]</span> 则 <span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \sup E, \ \  \liminf\limits_{x\to x_0} f(x) = \inf E \]</span> 另一种定义方式如下：<br />
-<span class="math display">\[\limsup\limits_{x\to x_0} f(x) := \lim_{\epsilon \to 0}(\sup_{x\in I} f(x)) = \inf_{\epsilon \to 0}(\sup_{x\in I} f(x)),\]</span> <span class="math display">\[\liminf\limits_{x\to x_0} f(x) := \lim_{\epsilon \to 0}(\inf_{x\in I} f(x)) = \sup_{\epsilon \to 0}(\inf_{x\in I} f(x)).\]</span></p>
+设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点, 同理构造 <span class="math display">\[ E = \lbrace l\in R_\infty: \text{存在数列}x_n\in D,x_n\to x_0,\text{使得}f(x_n)\to l\rbrace\]</span> 则 <span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \sup E, \ \  \liminf\limits_{x\to x_0} f(x) = \inf E \]</span></p>
+<p>上、下极限的等价形式：<br />
+<strong>定理4.1</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， 点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，则<br />
+<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \max\lbrace \limsup\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <span class="math display">\[\liminf\limits_{x\to x_0} f(x) = \min\lbrace \liminf\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <strong>注：</strong>定理4.1将函数的上、下极限和数列的上、下极限联系起来，其意义在于把函数上、下极限问题转化为数列上、下极限问题来处理。<br />
+例： 设函数 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span> 定义在 <span class="math inline">\(D\)</span> 上，点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，且 <span class="math inline">\(f\)</span>,<span class="math inline">\(g\)</span> 在 <span class="math inline">\(x_0\)</span> 附近都有界， 则 <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x) \le \limsup\limits_{x\to x_0} (f(x)+g(x)) \le \limsup\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x),\]</span> <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \liminf\limits_{x\to x_0} g(x) \le \liminf\limits_{x\to x_0} (f(x)+g(x)) \le \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x).\]</span></p>
 
     
 
@@ -343,7 +356,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://swt-2020.github.io/2020/10/11/limits/" title="limits" target="_blank">https://swt-2020.github.io/2020/10/11/limits/</a>
+          <a href="https://swt-2020.github.io/2020/10/11/limits/" title="Limit Superior and Limit Inferior" target="_blank">https://swt-2020.github.io/2020/10/11/limits/</a>
         </li>
         
         <li>
@@ -377,11 +390,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Limit-superior//" class="article-tag-list-link color5">Limit superior</a>
+        			<a href="/categories/limit-superior//" class="article-tag-list-link color5">limit superior</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Limit-superior/limit-inferior//" class="article-tag-list-link color5">limit inferior</a>
+        			<a href="/categories/limit-superior/limit-inferior//" class="article-tag-list-link color5">limit inferior</a>
         		</li>
       		
 		</ul>
