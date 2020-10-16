@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://swt-2020.github.io/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg">
 <meta property="og:image" content="https://swt-2020.github.io/images/Lim_sup_example.png">
 <meta property="article:published_time" content="2020-10-11T11:36:30.000Z">
-<meta property="article:modified_time" content="2020-10-16T09:18:24.991Z">
+<meta property="article:modified_time" content="2020-10-16T09:34:41.563Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -277,25 +277,26 @@
 <p><strong>定理2.2（上极限：重点！！！）</strong> 设 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
 (1) <span class="math inline">\(a^\ast \in E\)</span>;<br />
 (2) 针对 <span class="math inline">\(a^\ast\)</span> 的取值,分成以下三种情况：<br />
-(i) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\((a^\ast - \epsilon, a^\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((a^\ast + \epsilon,+\infty)\)</span>;<br />
+(i) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\((a^\ast - \epsilon, a^\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((a^\ast + \epsilon,+\infty)\)</span> 上;<br />
 (ii) 当 <span class="math inline">\(a^\ast = +\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项大于 <span class="math inline">\(N\)</span>;<br />
 (iii) 当 <span class="math inline">\(a^\ast = -\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(-\infty\)</span> 为极限。<br />
-具体证明见：<a href="https://swt-2020.github.io/limit/Thm_2.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_2.2.pdf</a> <strong>注：</strong><br />
+具体证明见：<a href="https://swt-2020.github.io/limit/Thm_2.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_2.2.pdf</a><br />
+<strong>注：</strong><br />
 1) 由定理2.2(1)知，<span class="math inline">\(a^\ast = \max E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的上极限为它的所有收敛子列极限中的最大值。换言之，上极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
 2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a^\ast = \limsup\limits_{n\to \infty} a_n\)</span> 等价于<br />
      (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &lt; a^\ast + \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a^\ast + \epsilon\)</span> 右边）;<br />
      (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &gt; a^\ast - \epsilon\)</span>.<br />
-具体证明见：<a href="https://swt-2020.github.io/open_set/Remark_2.pdf" class="uri">https://swt-2020.github.io/open_set/Remark_2.pdf</a></p>
+具体证明见：<a href="https://swt-2020.github.io/limit/Remark_2.pdf" class="uri">https://swt-2020.github.io/limit/Remark_2.pdf</a></p>
 <p>类似的，对下极限我们有：<br />
 <strong>定理2.3（下极限：重点！！！）</strong> 设 <span class="math inline">\(a_\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
 (1) <span class="math inline">\(a_\ast \in E\)</span>;<br />
 (2) 针对 <span class="math inline">\(a_\ast\)</span> 的取值,分成以下三种情况：<br />
-(i) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\(a_\ast\)</span> 的 <span class="math inline">\(\epsilon\)</span> 邻域 <span class="math inline">\((a_\ast - \epsilon, a_\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((-\infty, a_\ast -\epsilon)\)</span>;<br />
+(i) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\(a_\ast\)</span> 的 <span class="math inline">\(\epsilon\)</span> 邻域 <span class="math inline">\((a_\ast - \epsilon, a_\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((-\infty, a_\ast -\epsilon)\)</span> 上;<br />
 (ii) 当 <span class="math inline">\(a_\ast = -\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项小于 <span class="math inline">\(-N\)</span>;<br />
 (iii) 当 <span class="math inline">\(a_\ast = +\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(+\infty\)</span> 为极限。<br />
 <strong>注：</strong><br />
 1) 由定理2.3(1)知，<span class="math inline">\(a_\ast = \min E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的下极限为它的所有收敛子列极限中的最小值。换言之，下极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
-2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a_\ast = \limsup\limits_{n\to \infty} a_n\)</span> 等价于<br />
+2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a_\ast = \liminf\limits_{n\to \infty} a_n\)</span> 等价于<br />
      (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &gt; a_\ast - \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a_\ast - \epsilon\)</span> 左边）;<br />
      (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &lt; a_\ast + \epsilon\)</span>.</p>
 <p><strong>（重点！！！）由定理2.2和定理2.3可知，当 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限值，并且对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中除有限项外都落在 <span class="math inline">\((a_\ast -\epsilon, a^\ast+\epsilon)\)</span> 中，如下图阴影部分所示:</strong><br />
@@ -305,8 +306,8 @@
 <p>接下来给出上、下极限的性质：<br />
 <strong>性质2.4</strong> 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 和 <span class="math inline">\(\lbrace b_n \rbrace\)</span> 是两个数列，则<br />
 (1) <span class="math inline">\(\liminf\limits_{n\to \infty} a_n \le \limsup\limits_{n\to \infty} a_n\)</span>;<br />
-(2) <span class="math inline">\(\lim\limits_{n\to \infty}a_n\)</span> 当且仅当 <span class="math inline">\(\limsup\limits_{n\to \infty} a_n = \liminf\limits_{n\to \infty} a_n\)</span>;<br />
-(3) 当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(a_n \le b_n\)</span>, 则 <span class="math display">\[ \liminf\limits_{n\to \infty} a_n \le \liminf\limits_{n\to \infty} b_n, \  \limsup\limits_{n\to \infty} a_n \le \limsup\limits_{n\to \infty} b_n.\]</span></p>
+(2) <span class="math inline">\(\lim\limits_{n\to \infty}a_n = a\)</span> 当且仅当 <span class="math inline">\(\limsup\limits_{n\to \infty} a_n = \liminf\limits_{n\to \infty} a_n = a\)</span>, 这里 <span class="math inline">\(a\)</span> 可取正负无穷;<br />
+(3) 当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(a_n \le b_n\)</span>, 则 <span class="math display">\[ \liminf\limits_{n\to \infty} a_n \le \liminf\limits_{n\to \infty} b_n, \  \limsup\limits_{n\to \infty} a_n \le \limsup\limits_{n\to \infty} b_n.\]</span> 具体证明见：<a href="https://swt-2020.github.io/limit/Prop_2.4.pdf" class="uri">https://swt-2020.github.io/limit/Prop_2.4.pdf</a></p>
 <p><strong>三、数列上、下极限第二种定义方式</strong></p>
 <p><strong>定理3.1</strong> 对数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 定义 <span class="math display">\[\alpha_n = \inf\limits_{m\ge n} a_m = \inf\lbrace a_n,a_{n+1},a_{n+2},\cdots\rbrace,\]</span> <span class="math display">\[\beta_n = \sup\limits_{m\ge n} a_m = \sup\lbrace a_n,a_{n+1},a_{n+2},\cdots\rbrace,\]</span> 则：<br />
 (1) <span class="math inline">\(\lbrace \alpha_n \rbrace\)</span> 递增数列， <span class="math inline">\(\lbrace \beta_n \rbrace\)</span> 递减数列；<br />
