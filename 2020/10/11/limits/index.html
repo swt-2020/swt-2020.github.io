@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://swt-2020.github.io/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg">
 <meta property="og:image" content="https://swt-2020.github.io/images/Lim_sup_example.png">
 <meta property="article:published_time" content="2020-10-11T11:36:30.000Z">
-<meta property="article:modified_time" content="2020-10-16T09:39:28.170Z">
+<meta property="article:modified_time" content="2020-10-17T04:06:59.420Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -218,7 +218,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3.1k字</span>
+      <span class="post-count">3.2k字</span>
     </span>
   </span>
 
@@ -300,7 +300,8 @@
      (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &gt; a_\ast - \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a_\ast - \epsilon\)</span> 左边）;<br />
      (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &lt; a_\ast + \epsilon\)</span>.</p>
 <p><strong>（重点！！！）由定理2.2和定理2.3可知，当 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限值，并且对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中除有限项外都落在 <span class="math inline">\((a_\ast -\epsilon, a^\ast+\epsilon)\)</span> 中，如下图阴影部分所示:</strong><br />
-（该图来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>) <img src="/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg" /><br />
+（该图来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>)<br />
+<img src="/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg" /><br />
 </p>
 <p>接下来给出上、下极限的性质：<br />
 <strong>性质2.4</strong> 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 和 <span class="math inline">\(\lbrace b_n \rbrace\)</span> 是两个数列，则<br />
@@ -313,35 +314,36 @@
 (2) 上极限：<span class="math inline">\(a^\ast = \lim\limits_{n\to \infty} \alpha_n\)</span>, 下极限： <span class="math inline">\(a_\ast = \lim\limits_{n\to \infty} \beta_n\)</span>.<br />
 <strong>注：</strong><br />
 1) 数列 <span class="math inline">\(\lbrace \alpha_n \rbrace\)</span>, <span class="math inline">\(\lbrace \beta_n \rbrace\)</span> 刚开始看可能不太好理解，可以尝试像我上面写的一样，将其写成每一项形式，容易理解。<br />
-1) 上述定理3.1(2)也常常用来作为上下极限的定义,这时 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n := \lim_{n\to \infty} \sup\limits_{m\ge n} a_m = \inf_{n \ge 1} \sup\limits_{m\ge n} a_m,\]</span> <span class="math display">\[ \liminf\limits_{n\to \infty} a_n := \lim_{n\to \infty} \inf\limits_{m\ge n} a_m = \sup_{n \ge 1} \inf\limits_{m\ge n} a_m.\]</span> 下图直观描述定理3.1意义下的上下极限，图片来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>(图片中用的数列为 <span class="math inline">\(\lbrace x_n \rbrace\)</span>，而我们选取的数列为 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 仅此差别而已。)<br />
+2) 上述定理3.1(2)也常常用来作为上下极限的定义,这时 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n := \lim_{n\to \infty} \sup\limits_{m\ge n} a_m = \inf_{n \ge 1} \sup\limits_{m\ge n} a_m,\]</span> <span class="math display">\[ \liminf\limits_{n\to \infty} a_n := \lim_{n\to \infty} \inf\limits_{m\ge n} a_m = \sup_{n \ge 1} \inf\limits_{m\ge n} a_m.\]</span> 下图直观描述定理3.1意义下的上下极限，图片来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>(图片中用的数列为 <span class="math inline">\(\lbrace x_n \rbrace\)</span>，而我们选取的数列为 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 仅此差别而已。)<br />
 <img src="/images/Lim_sup_example.png" /><br />
 <strong>性质3.2（上、下极限的运算:重点！！！）</strong> 对数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, <span class="math inline">\(\lbrace b_n \rbrace\)</span> 有：<br />
 (1) <span class="math inline">\(\limsup\limits_{n\to \infty} (-a_n) = -\liminf\limits_{n\to \infty} a_n\)</span>, <span class="math inline">\(\liminf\limits_{n\to \infty} (-a_n) = -\limsup\limits_{n\to \infty} a_n\)</span>;<br />
 (2) <span class="math inline">\(\liminf\limits_{n\to \infty} a_n + \liminf\limits_{n\to \infty} b_n \le \liminf\limits_{n\to \infty} (a_n+b_n) \le \liminf\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n\)</span>,<br />
      <span class="math inline">\(\liminf\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n \le \limsup\limits_{n\to \infty} (a_n+b_n) \le \limsup\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n\)</span>;<br />
 （要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\((+\infty) + (-\infty)\)</span> 或 <span class="math inline">\((-\infty) + (+\infty)\)</span> 形式）<br />
+具体证明见：<a href="https://swt-2020.github.io/limit/Prop_4.2.pdf" class="uri">https://swt-2020.github.io/limit/Prop_4.2.pdf</a><br />
 (3) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 和 <span class="math inline">\(\lbrace b_n \rbrace\)</span> 均为非负数列，则<br />
 <span class="math inline">\(\liminf\limits_{n\to \infty} a_n \cdot \liminf\limits_{n\to \infty} b_n \le \liminf\limits_{n\to \infty} (a_nb_n) \le \liminf\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n\)</span>,<br />
 <span class="math inline">\(\liminf\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n \le \limsup\limits_{n\to \infty} (a_nb_n) \le \limsup\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n\)</span>.<br />
 （要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\(0 \cdot \infty\)</span> 形式）</p>
 <p><strong>四、函数在一点处的上、下极限</strong></p>
+<p><strong>引理4.1</strong> 设 <span class="math inline">\(D \subset R^n\)</span>, 点 <span class="math inline">\(x_0\)</span> 为集合 <span class="math inline">\(D\)</span> 的一个聚点 当且仅当 存在点列 <span class="math inline">\(x_n\in D\)</span> 且 <span class="math inline">\(x_n \ne x_0\ (n=1,2,3,\cdots)\)</span>, 使得 <span class="math inline">\(x_n\to x_0\ (n\to \infty)\)</span>.</p>
 <p><strong>（刻画数列极限和函数极限的关系）</strong><br />
-<strong>函数 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 处有极限 <span class="math inline">\(l\)</span> 当且仅当 对任何一个收敛于 <span class="math inline">\(x_0\)</span> 的数列 <span class="math inline">\(\lbrace x_n\ne x_0:n=1,2,3,\cdots\rbrace\)</span>, 数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于 <span class="math inline">\(l\)</span>.</strong><br />
-由数列上下极限的定义，刻画函数上、下极限如下：<br />
-设函数 <span class="math inline">\(f\)</span> 定义在 在 <span class="math inline">\(x_0\)</span> 的近旁 <span class="math inline">\(I = (x_0-\epsilon,x_0+\epsilon)-\lbrace x_0 \rbrace\)</span> 上， 分成以下两种情况讨论:<br />
-(1) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 的近旁有界，则存在数列 <span class="math inline">\(x_n \in I\)</span>, 使得 <span class="math inline">\(x_n \to x_0 (n\to \infty)\)</span>, 并且数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于某一个数；<br />
-(2) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 的近旁无上（下）界，则存在数列 <span class="math inline">\(x_n \in I\)</span>, <span class="math inline">\(x_n \to x_0 (n\to \infty)\)</span>, 使得 <span class="math inline">\(f(x_n)\to +\infty(-\infty)\)</span>.<br />
-在此基础上，构造 <span class="math display">\[ E = \lbrace l\in R_\infty: \text{存在数列}x_n\in I,x_n\to x_0,\text{使得}f(x_n)\to l\rbrace\]</span> 由(1)(2)知，<span class="math inline">\(E\)</span> 非空，类似数列上、下极限的定义，我们有： <span class="math inline">\(a^\ast = \sup E\)</span>, <span class="math inline">\(a_\ast = \inf E\)</span>,分别称为 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x\to x_0\)</span> 时的上、下极限，分别记为：<br />
-<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = a^\ast, \ \  \liminf\limits_{x\to x_0} f(x) = a_\ast \]</span> 类似数列上、下极限的性质，我们有：<br />
-(1) <span class="math inline">\(a^\ast \in E, \ a_\ast \in E\)</span>;<br />
-(2) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\delta &gt;0\)</span>, 使得当 <span class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时， 有 <span class="math inline">\(f(x) &lt; a^\ast + \epsilon\)</span>;<br />
-(3) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\delta &gt;0\)</span>, 使得当 <span class="math inline">\(0&lt;|x-x_0|&lt;\delta\)</span> 时， 有 <span class="math inline">\(f(x) &gt; a_\ast - \epsilon\)</span>.</p>
-<p><strong>类似的，将上、下极限概念推广到高维空间中，为接下来考虑半连续性做铺垫。</strong><br />
-设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点, 同理构造 <span class="math display">\[ E = \lbrace l\in R_\infty: \text{存在数列}x_n\in D,x_n\to x_0,\text{使得}f(x_n)\to l\rbrace\]</span> 则 <span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \sup E, \ \  \liminf\limits_{x\to x_0} f(x) = \inf E \]</span></p>
-<p>上、下极限的等价形式：<br />
-<strong>定理4.1</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， 点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，则<br />
-<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \max\lbrace \limsup\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <span class="math display">\[\liminf\limits_{x\to x_0} f(x) = \min\lbrace \liminf\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <strong>注：</strong>定理4.1将函数的上、下极限和数列的上、下极限联系起来，其意义在于把函数上、下极限问题转化为数列上、下极限问题来处理。<br />
-例： 设函数 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span> 定义在 <span class="math inline">\(D\)</span> 上，点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，且 <span class="math inline">\(f\)</span>,<span class="math inline">\(g\)</span> 在 <span class="math inline">\(x_0\)</span> 附近都有界， 则 <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x) \le \limsup\limits_{x\to x_0} (f(x)+g(x)) \le \limsup\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x),\]</span> <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \liminf\limits_{x\to x_0} g(x) \le \liminf\limits_{x\to x_0} (f(x)+g(x)) \le \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x).\]</span></p>
+<strong>Heine定理:</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点. 函数 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 处极限为 <span class="math inline">\(l\)</span> 当且仅当 对任意点列 <span class="math inline">\(\lbrace x_n \rbrace \subset D\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span> 且 $x_n x_0 $, 数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于 <span class="math inline">\(l\)</span>.</p>
+<p><strong>由数列上下极限的定义，刻画函数上、下极限如下：</strong><br />
+设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点. 分成以下两种情况讨论:<br />
+(1) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 附近有界，则存在点列 <span class="math inline">\(\lbrace x_n \rbrace \subset D\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span>, 使得 <span class="math inline">\(x_n \to x_0\)</span>, 并且数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于某一个数 <span class="math inline">\(l\)</span>, 此时称 <span class="math inline">\(l\)</span> 为函数 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的子极限；<br />
+(2) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 附近无上（下）界，则存在点列 <span class="math inline">\(\lbrace x_n \rbrace \subset D\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span>, <span class="math inline">\(x_n \to x_0\)</span>, 使得 <span class="math inline">\(f(x_n)\to +\infty(-\infty)\)</span>， 这时把 <span class="math inline">\(+\infty\)</span> 和 <span class="math inline">\(-\infty\)</span> 也看成是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的子极限。<br />
+在此基础上，构造 <span class="math display">\[ E = \lbrace l\in R_\infty: l \text{为} f \text{在} x_0 \text{处的子极限} \rbrace\]</span> 由(1)(2)知，<span class="math inline">\(E\)</span> 非空，类似数列上、下极限的定义，我们有： <span class="math inline">\(a^\ast = \sup E\)</span>, <span class="math inline">\(a_\ast = \inf E\)</span>, 分别称为 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的上、下极限，记为：<br />
+<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = a^\ast, \ \  \liminf\limits_{x\to x_0} f(x) = a_\ast \]</span> <strong>注：</strong>函数上、下极限说到底就是根据Heine定理通过构造数列定义出来的，相当于绕了一个弯，先用点列 <span class="math inline">\(\lbrace x_n \rbrace\)</span> 收敛到 <span class="math inline">\(x_0\)</span>, 再用数列 <span class="math inline">\(f(x_n)\)</span> 那一套定义函数上、下极限。<br />
+类似数列上、下极限的性质，我们有平行的结论：<br />
+(1) <span class="math inline">\(a^\ast \in E\)</span>;<br />
+(2) <span class="math inline">\(a_\ast \in E\)</span>;<br />
+</p>
+<p><strong>定理4.2（上、下极限的等价形式）</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(D \subset R^n\)</span> 上， 点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，则<br />
+<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \max\lbrace \limsup\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <span class="math display">\[\liminf\limits_{x\to x_0} f(x) = \min\lbrace \liminf\limits_{n\to \infty}f(x_n)| x_n\in D,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> 具体证明见：<a href="https://swt-2020.github.io/limit/Thm_4.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_4.2.pdf</a><br />
+<strong>注：</strong>定理4.2将函数的上、下极限和数列的上、下极限联系起来，其意义在于把函数上、下极限问题转化为数列上、下极限问题来处理。</p>
+<p><strong>例6：</strong> 设函数 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span> 定义在 <span class="math inline">\(D\)</span> 上，点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(D\)</span> 的一个聚点，且 <span class="math inline">\(f\)</span>,<span class="math inline">\(g\)</span> 在 <span class="math inline">\(x_0\)</span> 附近都有界， 则 <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x) \le \limsup\limits_{x\to x_0} (f(x)+g(x)) \le \limsup\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x),\]</span> <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \liminf\limits_{x\to x_0} g(x) \le \liminf\limits_{x\to x_0} (f(x)+g(x)) \le \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x).\]</span> （要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\((+\infty) + (-\infty)\)</span> 或 <span class="math inline">\((-\infty) + (+\infty)\)</span> 形式） 具体证明见：<a href="https://swt-2020.github.io/limit/Example.pdf" class="uri">https://swt-2020.github.io/limit/Example.pdf</a></p>
 
     
 
