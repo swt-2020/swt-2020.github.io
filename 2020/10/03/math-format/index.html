@@ -6,25 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://swt-2020.github.io">
-  <title>Limit Superior and Limit Inferior | swt&#39;s blog</title>
+  <title>math_format | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材数学分析教程（史济怀，常庚哲），数学分析（陈纪修）。">
+  <meta name="description" content="一级标题 行内形式：我的博客 自动链接：我的博客地址https:&#x2F;&#x2F;swt-2020.github.io&#x2F;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Limit Superior and Limit Inferior">
-<meta property="og:url" content="https://swt-2020.github.io/2020/10/11/limits/index.html">
+<meta property="og:title" content="math_format">
+<meta property="og:url" content="https://swt-2020.github.io/2020/10/03/math-format/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
-<meta property="og:description" content="这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材数学分析教程（史济怀，常庚哲），数学分析（陈纪修）。">
+<meta property="og:description" content="一级标题 行内形式：我的博客 自动链接：我的博客地址https:&#x2F;&#x2F;swt-2020.github.io&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://swt-2020.github.io/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg">
-<meta property="og:image" content="https://swt-2020.github.io/images/Lim_sup_example.png">
-<meta property="article:published_time" content="2020-10-11T11:36:30.000Z">
-<meta property="article:modified_time" content="2020-10-17T11:45:52.598Z">
+<meta property="og:image" content="https://swt-2020.github.io/images/cartoon.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/希腊字母.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/字体转换.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/特殊符号.jpg">
+<meta property="article:published_time" content="2020-10-03T14:31:40.000Z">
+<meta property="article:modified_time" content="2020-10-17T09:44:11.745Z">
 <meta property="article:author" content="swt_2020">
-<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://swt-2020.github.io/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg">
+<meta name="twitter:image" content="https://swt-2020.github.io/images/cartoon.jpg">
   
     <link rel="alternative" href="/atom.xml" title="swt&#39;s blog" type="application/atom+xml">
   
@@ -185,14 +186,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-limits" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-math-format" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      Limit Superior and Limit Inferior
+      math_format
     </h1>
   
 
@@ -204,8 +205,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/2020/10/11/limits/" class="archive-article-date">
-        <time datetime="2020-10-11T11:36:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-11</time>
+<a href="/2020/10/03/math-format/" class="archive-article-date">
+        <time datetime="2020-10-03T14:31:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-03</time>
 </a>
 
   
@@ -218,7 +219,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">3.2k字</span>
+      <span class="post-count">761字</span>
     </span>
   </span>
 
@@ -227,7 +228,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">14分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -238,171 +239,163 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>这篇博客主要为了整理分析中上、下极限的概念，进行归纳理解，其中涉及到的命题、性质等摘自教材<strong><em>数学分析教程（史济怀，常庚哲）</em></strong>，<strong><em>数学分析（陈纪修）</em></strong>。 <a id="more"></a></p>
-<p><strong>一、上确界和下确界</strong></p>
-<p><strong>定义1.1（上确界）</strong> 设 <span class="math inline">\(E \subset \mathbb{R}\)</span> 是非空有上界的集合，实数 <span class="math inline">\(\beta\)</span> 满足下述两个条件：<br />
-(1) <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的上界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \le \beta\)</span>,<br />
-(2) 任何小于 <span class="math inline">\(\beta\)</span> 的数都不是 <span class="math inline">\(E\)</span> 的上界： 对任意的 <span class="math inline">\(\epsilon &gt; 0\)</span>, 必可找到一个 <span class="math inline">\(x_{\epsilon} \in E\)</span>, 使得 <span class="math inline">\(x_{\epsilon} &gt; \beta - \epsilon.\)</span><br />
-则称 <span class="math inline">\(\beta\)</span> 为集合 <span class="math inline">\(E\)</span> 的<strong>上确界</strong>， 记为 <span class="math inline">\(\beta = \sup E\)</span>.<br />
-<strong>注：</strong><br />
-1) 由定义1.1知，<span class="math inline">\(E\)</span> 的上确界 <span class="math inline">\(\beta\)</span> 是 <span class="math inline">\(E\)</span> 的最小上界;<br />
-2) 由 <span class="math inline">\(\beta = \sup E\)</span> 可知，存在 <span class="math inline">\(x_k \in E(k=1,2,\cdots)\)</span>，使得 <span class="math inline">\(\lim\limits_{k\to \infty} x_k = \beta\)</span>.</p>
-<p><strong>定义1.2（下确界）</strong> 设 <span class="math inline">\(E \subset \mathbb{R}\)</span> 是非空有下界的集合，实数 <span class="math inline">\(\alpha\)</span> 满足下述两个条件：<br />
-(1) <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的下界： <span class="math inline">\(\forall x \in E\)</span>, 有 <span class="math inline">\(x \ge \alpha\)</span>,<br />
-(2) 任何大于 <span class="math inline">\(\alpha\)</span> 的数都不是 <span class="math inline">\(E\)</span> 的下界： 对任意的 <span class="math inline">\(\epsilon &gt; 0\)</span>, 必可找到一个 <span class="math inline">\(y_{\epsilon} \in E\)</span>, 使得 <span class="math inline">\(y_{\epsilon} &lt; \alpha + \epsilon.\)</span><br />
-则称 <span class="math inline">\(\alpha\)</span> 为集合 <span class="math inline">\(E\)</span> 的<strong>下确界</strong>， 记为 <span class="math inline">\(\alpha = \inf E\)</span>.<br />
-<strong>注：</strong><br />
-1) 由定义1.2知，<span class="math inline">\(E\)</span> 的下确界 <span class="math inline">\(\alpha\)</span> 是 <span class="math inline">\(E\)</span> 的最大下界。<br />
-2) 由 <span class="math inline">\(\alpha = \inf E\)</span> 可知，存在 <span class="math inline">\(y_k \in E(k=1,2,\cdots)\)</span>，使得 <span class="math inline">\(\lim\limits_{k\to \infty} y_k = \alpha\)</span>;<br />
-3) <span class="math inline">\(\sup(-E) = -\inf E\)</span> 或 <span class="math inline">\(\inf (-E) = -\sup E\)</span>.<br />
-<strong>补充定义：</strong> 若 <span class="math inline">\(E\)</span> 是一个没有上界的集合，则 <span class="math inline">\(\sup E = +\infty\)</span>; 若 <span class="math inline">\(E\)</span> 没有下界，则 <span class="math inline">\(\inf E = -\infty\)</span>.</p>
-<p>例1： <span class="math inline">\(E = (0,1)\)</span>, 这时 <span class="math inline">\(\sup E = 1\)</span>, <span class="math inline">\(\inf E = 0\)</span>.<br />
-例2： <span class="math inline">\(E = \lbrace \frac1n : n=1,2,\cdots\rbrace\)</span>, 这时 <span class="math inline">\(\sup E = 1\)</span>, <span class="math inline">\(\inf E = 0\)</span>.<br />
-例3： <span class="math inline">\(E = \lbrace \sqrt{n}: n=1,2,\cdots\rbrace\)</span>, 这时 <span class="math inline">\(\sup E = +\infty\)</span>, <span class="math inline">\(\inf E = 1\)</span>.<br />
-</p>
-<p><strong>二、数列上、下极限第一种定义方式</strong></p>
-<p>对任意给定的数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 分为下述两种情况：<br />
-(1) 若该数列有界，由Bolzano-Weierstrass定理知, 可以选出一个收敛的子列 <span class="math inline">\(a_{n_k}\)</span>, 使得 <span class="math inline">\(\lim\limits_{k\to \infty} a_{n_k} = l\)</span>, 称 <span class="math inline">\(l\)</span> 为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个极限点；<br />
-(2) 若该数列无上界（下界），必有子列发散至正（负）无穷大, 这时把 <span class="math inline">\(+\infty\)</span> 和 <span class="math inline">\(-\infty\)</span> 也看成是极限点。<br />
-<strong>注：</strong><br />
-1) <strong>Bolzano-Weierstrass定理:</strong> 从任何有界的数列中必可选出一个收敛的子列。<br />
-2) <strong><span class="math inline">\(l\)</span> （有限）为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个极限点 等价于 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项落在 <span class="math inline">\((l - \epsilon, l + \epsilon)\)</span> 中。</strong><br />
-3) <strong><span class="math inline">\(l = +\infty\ (\text{或}-\infty)\)</span> 为极限点 等价于 对任意 <span class="math inline">\(G&gt;0\)</span>, 存在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中的无穷多项，使得 <span class="math inline">\(a_n &gt;G\ (\text{或}a_n &lt;-G)\)</span>.</strong><br />
-4）对一个数列而言，极限点可以有无穷多个，比如取 <span class="math inline">\(\lbrace 1,1,2,1,2,3,1,2,3,4,\cdots\rbrace\)</span>.</p>
-<p><strong>定义2.1</strong> 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是一个数列，令 <strong><span class="math inline">\(E = \lbrace \lbrace a_n \rbrace \text{的所有极限点的全体}\rbrace\)</span></strong>. 记 <span class="math display">\[a^\ast = \sup E,\ \  a_\ast = \inf E,\]</span> 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 分别称为数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的<strong>上极限</strong>和<strong>下极限</strong>，记为 <span class="math display">\[a^\ast = \limsup\limits_{n\to \infty} a_n, \ a_\ast = \liminf\limits_{n\to \infty} a_n.\]</span> <strong>注：</strong><br />
-1) <span class="math inline">\(E\)</span> 显然非空。另外，<strong>若 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列，则 <span class="math inline">\(E\)</span> 是非空的有界集合，此时上、下极限 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限的。</strong><br />
-2) 上、下极限取值范围为广义实数 <span class="math inline">\(R_{\infty} = R \cup \lbrace +\infty,-\infty\rbrace\)</span>.</p>
-<p>例4： 设数列 <span class="math inline">\(a_n = n^{(-1)^n}\ (n=1,2,\cdots)\)</span>, 由于 <span class="math inline">\(a_{2n} = 2n\)</span>, <span class="math inline">\(a_{2n+1} = \frac{1}{2n+1}\)</span>, 则 <span class="math inline">\(E = \lbrace 0, +\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = 0.\]</span> 例5： 设数列 <span class="math inline">\(a_n = 1+ n\sin\frac{n\pi}{2}\ (n=1,2,\cdots)\)</span>. 简单计算得 <span class="math inline">\(E = \lbrace 1,-\infty,+\infty\rbrace\)</span>, 从而 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n = +\infty, \  \liminf\limits_{n\to \infty} a_n  = -\infty.\]</span></p>
-<p><strong>当 <span class="math inline">\(E\)</span> 中元素有限时，<span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 显然落在 <span class="math inline">\(E\)</span> 中，当 <span class="math inline">\(E\)</span> 是一个无穷集合时， <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(a_\ast\)</span> 是否仍然是 <span class="math inline">\(E\)</span> 中的元素。下面两个定理予以刻画：</strong></p>
-<p><strong>定理2.2（上极限：重点！！！）</strong> 设 <span class="math inline">\(a^\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
-(1) <span class="math inline">\(a^\ast \in E\)</span>;<br />
-(2) 针对 <span class="math inline">\(a^\ast\)</span> 的取值,分成以下三种情况：<br />
-(i) 当 <span class="math inline">\(a^\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\((a^\ast - \epsilon, a^\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((a^\ast + \epsilon,+\infty)\)</span> 上;<br />
-(ii) 当 <span class="math inline">\(a^\ast = +\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项大于 <span class="math inline">\(N\)</span>;<br />
-(iii) 当 <span class="math inline">\(a^\ast = -\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(-\infty\)</span> 为极限。<br />
-具体证明见：<a href="https://swt-2020.github.io/limit/Thm_2.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_2.2.pdf</a><br />
-<strong>注：</strong><br />
-1) 由定理2.2(1)知，<span class="math inline">\(a^\ast = \max E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的上极限为它的所有收敛子列极限中的最大值。换言之，上极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
-2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a^\ast = \limsup\limits_{n\to \infty} a_n\)</span> 等价于<br />
-     (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &lt; a^\ast + \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a^\ast + \epsilon\)</span> 右边）;<br />
-     (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &gt; a^\ast - \epsilon\)</span>.<br />
-具体证明见：<a href="https://swt-2020.github.io/limit/Remark_2.pdf" class="uri">https://swt-2020.github.io/limit/Remark_2.pdf</a></p>
-<p>类似的，对下极限我们有：<br />
-<strong>定理2.3（下极限：重点！！！）</strong> 设 <span class="math inline">\(a_\ast\)</span> 和 <span class="math inline">\(E\)</span> 如定义2.1所述， 则<br />
-(1) <span class="math inline">\(a_\ast \in E\)</span>;<br />
-(2) 针对 <span class="math inline">\(a_\ast\)</span> 的取值,分成以下三种情况：<br />
-(i) 当 <span class="math inline">\(a_\ast\)</span> 有限时， 对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, 数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项落在 <span class="math inline">\(a_\ast\)</span> 的 <span class="math inline">\(\epsilon\)</span> 邻域 <span class="math inline">\((a_\ast - \epsilon, a_\ast + \epsilon)\)</span> 中，而只有有限多项落在 <span class="math inline">\((-\infty, a_\ast -\epsilon)\)</span> 上;<br />
-(ii) 当 <span class="math inline">\(a_\ast = -\infty\)</span> 时，对任意 <span class="math inline">\(N&gt;0\)</span>, 在 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中必有无穷多项小于 <span class="math inline">\(-N\)</span>;<br />
-(iii) 当 <span class="math inline">\(a_\ast = +\infty\)</span> 时, 这时数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 以 <span class="math inline">\(+\infty\)</span> 为极限。<br />
-<strong>注：</strong><br />
-1) 由定理2.3(1)知，<span class="math inline">\(a_\ast = \min E\)</span>, 即数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的下极限为它的所有收敛子列极限中的最小值。换言之，下极限必为 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 的一个收敛子列的极限。<br />
-2) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 则 <span class="math inline">\(a_\ast = \liminf\limits_{n\to \infty} a_n\)</span> 等价于<br />
-     (i) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, 存在正整数 <span class="math inline">\(N\)</span>, 使得对任意 <span class="math inline">\(n &gt; N\)</span> 有 <span class="math inline">\(a_n &gt; a_\ast - \epsilon\)</span>. （换言之，数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中只有有限项落在 <span class="math inline">\(a_\ast - \epsilon\)</span> 左边）;<br />
-     (ii) 对任意 <span class="math inline">\(\epsilon &gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中有无穷多项，满足 <span class="math inline">\(a_n &lt; a_\ast + \epsilon\)</span>.</p>
-<p><strong>（重点！！！）由定理2.2和定理2.3可知，当 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 是有界数列， 这时 <span class="math inline">\(a^{\ast}\)</span> 和 <span class="math inline">\(a_\ast\)</span> 都是有限值，并且对任意 <span class="math inline">\(\epsilon&gt;0\)</span>, <span class="math inline">\(\lbrace a_n \rbrace\)</span> 中除有限项外都落在 <span class="math inline">\((a_\ast -\epsilon, a^\ast+\epsilon)\)</span> 中，如下图阴影部分所示:</strong><br />
-（该图来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>)<br />
-<img src="/images/Illustration_of_Limes_superior_and_Limes_Inferior.svg" /><br />
-</p>
-<p>接下来给出上、下极限的性质：<br />
-<strong>性质2.4</strong> 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 和 <span class="math inline">\(\lbrace b_n \rbrace\)</span> 是两个数列，则<br />
-(1) <span class="math inline">\(\liminf\limits_{n\to \infty} a_n \le \limsup\limits_{n\to \infty} a_n\)</span>;<br />
-(2) <span class="math inline">\(\lim\limits_{n\to \infty}a_n = a\)</span> 当且仅当 <span class="math inline">\(\limsup\limits_{n\to \infty} a_n = \liminf\limits_{n\to \infty} a_n = a\)</span>, 这里 <span class="math inline">\(a\)</span> 可取正负无穷;<br />
-(3) 当 <span class="math inline">\(n &gt; N\)</span> 时，有 <span class="math inline">\(a_n \le b_n\)</span>, 则 <span class="math display">\[ \liminf\limits_{n\to \infty} a_n \le \liminf\limits_{n\to \infty} b_n, \  \limsup\limits_{n\to \infty} a_n \le \limsup\limits_{n\to \infty} b_n.\]</span> 具体证明见：<a href="https://swt-2020.github.io/limit/Prop_2.4.pdf" class="uri">https://swt-2020.github.io/limit/Prop_2.4.pdf</a></p>
-<p><strong>三、数列上、下极限第二种定义方式</strong></p>
-<p><strong>定理3.1</strong> 对数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 定义 <span class="math display">\[\alpha_n = \inf\limits_{m\ge n} a_m = \inf\lbrace a_n,a_{n+1},a_{n+2},\cdots\rbrace,\]</span> <span class="math display">\[\beta_n = \sup\limits_{m\ge n} a_m = \sup\lbrace a_n,a_{n+1},a_{n+2},\cdots\rbrace,\]</span> 则：<br />
-(1) <span class="math inline">\(\lbrace \alpha_n \rbrace\)</span> 递增数列， <span class="math inline">\(\lbrace \beta_n \rbrace\)</span> 递减数列；<br />
-(2) 上极限：<span class="math inline">\(a^\ast = \lim\limits_{n\to \infty} \alpha_n\)</span>, 下极限： <span class="math inline">\(a_\ast = \lim\limits_{n\to \infty} \beta_n\)</span>.<br />
-<strong>注：</strong><br />
-1) 数列 <span class="math inline">\(\lbrace \alpha_n \rbrace\)</span>, <span class="math inline">\(\lbrace \beta_n \rbrace\)</span> 刚开始看可能不太好理解，可以尝试像我上面写的一样，将其写成每一项形式，容易理解。<br />
-2) 上述定理3.1(2)也常常用来作为上下极限的定义,这时 <span class="math display">\[ \limsup\limits_{n\to \infty} a_n := \lim_{n\to \infty} \sup\limits_{m\ge n} a_m = \inf_{n \ge 1} \sup\limits_{m\ge n} a_m,\]</span> <span class="math display">\[ \liminf\limits_{n\to \infty} a_n := \lim_{n\to \infty} \inf\limits_{m\ge n} a_m = \sup_{n \ge 1} \inf\limits_{m\ge n} a_m.\]</span> 下图直观描述定理3.1意义下的上下极限，图片来自维基百科： <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior" class="uri">https://en.wikipedia.org/wiki/Limit_superior_and_limit_inferior</a>(图片中用的数列为 <span class="math inline">\(\lbrace x_n \rbrace\)</span>，而我们选取的数列为 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, 仅此差别而已。)<br />
-<img src="/images/Lim_sup_example.png" /><br />
-<strong>性质3.2（上、下极限的运算:重点！！！）</strong> 对数列 <span class="math inline">\(\lbrace a_n \rbrace\)</span>, <span class="math inline">\(\lbrace b_n \rbrace\)</span> 有：<br />
-(1) <span class="math inline">\(\limsup\limits_{n\to \infty} (-a_n) = -\liminf\limits_{n\to \infty} a_n\)</span>, <span class="math inline">\(\liminf\limits_{n\to \infty} (-a_n) = -\limsup\limits_{n\to \infty} a_n\)</span>;<br />
-(2) <span class="math inline">\(\liminf\limits_{n\to \infty} a_n + \liminf\limits_{n\to \infty} b_n \le \liminf\limits_{n\to \infty} (a_n+b_n) \le \liminf\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n\)</span>,<br />
-     <span class="math inline">\(\liminf\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n \le \limsup\limits_{n\to \infty} (a_n+b_n) \le \limsup\limits_{n\to \infty} a_n + \limsup\limits_{n\to \infty} b_n\)</span>;<br />
-（要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\((+\infty) + (-\infty)\)</span> 或 <span class="math inline">\((-\infty) + (+\infty)\)</span> 形式）<br />
-具体证明见：<a href="https://swt-2020.github.io/limit/Prop_4.2.pdf" class="uri">https://swt-2020.github.io/limit/Prop_4.2.pdf</a><br />
-(3) 设 <span class="math inline">\(\lbrace a_n \rbrace\)</span> 和 <span class="math inline">\(\lbrace b_n \rbrace\)</span> 均为非负数列，则<br />
-<span class="math inline">\(\liminf\limits_{n\to \infty} a_n \cdot \liminf\limits_{n\to \infty} b_n \le \liminf\limits_{n\to \infty} (a_nb_n) \le \liminf\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n\)</span>,<br />
-<span class="math inline">\(\liminf\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n \le \limsup\limits_{n\to \infty} (a_nb_n) \le \limsup\limits_{n\to \infty} a_n \cdot \limsup\limits_{n\to \infty} b_n\)</span>.<br />
-（要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\(0 \cdot \infty\)</span> 形式）</p>
-<p><strong>四、函数在一点处的上、下极限</strong></p>
-<p><strong>引理4.1</strong> 设 <span class="math inline">\(X \subset R^n\)</span>, 点 <span class="math inline">\(x_0\)</span> 为集合 <span class="math inline">\(X\)</span> 的一个聚点 当且仅当 存在点列 <span class="math inline">\(x_n\in X\)</span> 且 <span class="math inline">\(x_n \ne x_0\ (n=1,2,3,\cdots)\)</span>, 使得 <span class="math inline">\(x_n\to x_0\ (n\to \infty)\)</span>.</p>
-<p><strong>（刻画数列极限和函数极限的关系）</strong><br />
-<strong>Heine定理:</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(X \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(X\)</span> 的一个聚点. 函数 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 处极限为 <span class="math inline">\(l\)</span> 当且仅当 对任意点列 <span class="math inline">\(\lbrace x_n \rbrace \subset X\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span> 且 $x_n x_0 $, 数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于 <span class="math inline">\(l\)</span>.</p>
-<p><strong>由数列上下极限的定义，刻画函数上、下极限如下：</strong><br />
-设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(X \subset R^n\)</span> 上， <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(X\)</span> 的一个聚点. 分成以下两种情况讨论:<br />
-(1) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 附近有界，则存在点列 <span class="math inline">\(\lbrace x_n \rbrace \subset X\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span>, 使得 <span class="math inline">\(x_n \to x_0\)</span>, 并且数列 <span class="math inline">\(\lbrace f(x_n)\rbrace\)</span> 收敛于某一个数 <span class="math inline">\(l\)</span>, 此时称 <span class="math inline">\(l\)</span> 为函数 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的子极限；<br />
-(2) 若 <span class="math inline">\(f\)</span> 在 <span class="math inline">\(x_0\)</span> 附近无上（下）界，则存在点列 <span class="math inline">\(\lbrace x_n \rbrace \subset X\)</span>, <span class="math inline">\(x_n \ne x_0\ (n = 1,2,3,\cdots)\)</span>, <span class="math inline">\(x_n \to x_0\)</span>, 使得 <span class="math inline">\(f(x_n)\to +\infty(-\infty)\)</span>， 这时把 <span class="math inline">\(+\infty\)</span> 和 <span class="math inline">\(-\infty\)</span> 也看成是 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的子极限。<br />
-在此基础上，构造 <span class="math display">\[ E = \lbrace l\in R_\infty: l \text{为} f \text{在} x_0 \text{处的子极限} \rbrace\]</span> 由(1)(2)知，<span class="math inline">\(E\)</span> 非空，类似数列上、下极限的定义，我们有： <span class="math inline">\(a^\ast = \sup E\)</span>, <span class="math inline">\(a_\ast = \inf E\)</span>, 分别称为 <span class="math inline">\(f(x)\)</span> 在 <span class="math inline">\(x_0\)</span> 处的上、下极限，记为：<br />
-<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = a^\ast, \ \  \liminf\limits_{x\to x_0} f(x) = a_\ast \]</span> <strong>注：</strong>函数上、下极限说到底就是根据Heine定理通过构造数列定义出来的，相当于绕了一个弯，先用点列 <span class="math inline">\(\lbrace x_n \rbrace\)</span> 收敛到 <span class="math inline">\(x_0\)</span>, 再用数列 <span class="math inline">\(f(x_n)\)</span> 那一套定义函数上、下极限。<br />
-类似数列上、下极限的性质，我们有平行的结论：<br />
-(1) <span class="math inline">\(a^\ast \in E\)</span>;<br />
-(2) <span class="math inline">\(a_\ast \in E\)</span>;<br />
-</p>
-<p><strong>定理4.2（上、下极限的等价形式）</strong> 设函数 <span class="math inline">\(f\)</span> 定义在 <span class="math inline">\(X \subset R^n\)</span> 上， 点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(X\)</span> 的一个聚点，则<br />
-<span class="math display">\[\limsup\limits_{x\to x_0} f(x) = \max\lbrace \limsup\limits_{n\to \infty}f(x_n)| x_n\in X,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> <span class="math display">\[\liminf\limits_{x\to x_0} f(x) = \min\lbrace \liminf\limits_{n\to \infty}f(x_n)| x_n\in X,x_n \ne x_0, \text{并且}x_n \to x_0\rbrace,\]</span> 具体证明见：<a href="https://swt-2020.github.io/limit/Thm_4.2.pdf" class="uri">https://swt-2020.github.io/limit/Thm_4.2.pdf</a><br />
-<strong>注：</strong>定理4.2将函数的上、下极限和数列的上、下极限联系起来，其意义在于把函数上、下极限问题转化为数列上、下极限问题来处理。</p>
-<p><strong>例6：</strong> 设函数 <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(g(x)\)</span> 定义在 <span class="math inline">\(X\)</span> 上，点 <span class="math inline">\(x_0\)</span> 是 <span class="math inline">\(X\)</span> 的一个聚点，则 <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x) \le \limsup\limits_{x\to x_0} (f(x)+g(x)) \le \limsup\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x),\]</span> <span class="math display">\[ \liminf\limits_{x\to x_0} f(x) + \liminf\limits_{x\to x_0} g(x) \le \liminf\limits_{x\to x_0} (f(x)+g(x)) \le \liminf\limits_{x\to x_0} f(x) + \limsup\limits_{x\to x_0} g(x).\]</span> （要求上述诸式的左、右端不是待定型，即不为 <span class="math inline">\((+\infty) + (-\infty)\)</span> 或 <span class="math inline">\((-\infty) + (+\infty)\)</span> 形式）<br />
-具体证明见：<a href="https://swt-2020.github.io/limit/Example.pdf" class="uri">https://swt-2020.github.io/limit/Example.pdf</a></p>
+    <h2 id="一级标题">一级标题</h2>
+<p>行内形式：<a href="https://swt-2020.github.io/">我的博客</a> 自动链接：我的博客地址<a href="https://swt-2020.github.io/" class="uri">https://swt-2020.github.io/</a> <a id="more"></a></p>
+<p><span class="math display">\[\overline{E} = \bigcap\limits_{F\in \mathcal{F},F\supset E} F\]</span> ### optimization <em>这是斜体</em> 或 <em>这也是斜体</em> <strong>这是粗体</strong> <strong><em>这是加粗斜体</em></strong> <del>这是删除线</del></p>
+<h4 id="siri">siri</h4>
+<ul>
+<li>无序列表项1</li>
+<li>无序列表项2</li>
+<li>无序列表项3</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>表头1</th>
+<th style="text-align: left;">表头2</th>
+<th style="text-align: center;">表头3</th>
+<th style="text-align: right;">表头4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: right;">128</td>
+</tr>
+<tr class="even">
+<td>78</td>
+<td style="text-align: left;">4456</td>
+<td style="text-align: center;">85855</td>
+<td style="text-align: right;">123</td>
+</tr>
+<tr class="odd">
+<td>962</td>
+<td style="text-align: left;">54566</td>
+<td style="text-align: center;">788</td>
+<td style="text-align: right;">258</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/images/cartoon.jpg" /></p>
+<p>一、上下标 <span class="math display">\[ x^{y^z}=(1+{\rm e}^x)^{-2xy^w} \]</span> <!--more--></p>
+<p>二、 括号 <span class="math display">\[\langle x \rangle\]</span> <span class="math display">\[\lceil y \rceil\]</span> <span class="math display">\[\lfloor z \rfloor\]</span> <span class="math display">\[\lbrace w \rbrace\]</span></p>
+<p>三、开方，省略号 <span class="math display">\[f(x_1,x_2,\underbrace{\ldots}_{\rm ldots} ,x_n) = x_1^2 + x_2^2 + \underbrace{\cdots}_{\rm cdots} + x_n^2\]</span> <span class="math display">\[\sqrt[3]{2}\]</span></p>
+<p>四、向量，内积，范数 <span class="math display">\[\vec{a} \cdot \vec{b}=0\]</span> <span class="math display">\[\overleftarrow{xy} \quad and \quad \overleftrightarrow{xy} \quad and \quad \overrightarrow{xy}\]</span> <span class="math display">\[\lVert x \rVert\]</span> <span class="math display">\[\left&lt; a,b \right&gt;\]</span></p>
+<p>五、积分、极限 <span class="math display">\[\int_0^1 {x^2} \,{\rm d}x\]</span> <span class="math display">\[ \lim_{n \to +\infty} \frac{1}{n(n+1)} \quad and \quad \lim_{x\leftarrow{示例}} \frac{1}{n(n+1)} \]</span></p>
+<p>六、累加、累乘 <span class="math display">\[\sum_{i=1}^n \frac{1}{i^2} \quad and \quad \prod_{i=1}^n \frac{1}{i^2} \quad and \quad \bigcup_{i=1}^{2} R\]</span></p>
+<p>七、大括号和行标 <span class="math display">\[\Biggl(\biggl(\Bigl(\bigl((x)\bigr)\Bigr)\biggr)\Biggr)\]</span></p>
+<p><span class="math display">\[
+f\left(
+   \left[ 
+     \frac{
+       1+\left\{x,y\right\}
+     }{
+       \left(
+          \frac{x}{y}+\frac{y}{x}
+       \right)
+       \left(u+1\right)
+     }+a
+   \right]^{3/2}
+\right)
+\tag{行标}
+\]</span></p>
+<p>八、表格 <span class="math display">\[
+\begin{array}{ccc|c}
+a11 &amp; a12 &amp; a13  &amp; b1 \\
+a21 &amp; a22  &amp; a23 &amp; b2  \\ 
+a31 &amp; a32  &amp; a33 &amp; b3  \\
+\end{array}
+\]</span></p>
+<p>九、希腊字母 <img src="/images/希腊字母.jpg" /></p>
+<p>十、字体转换 <img src="/images/字体转换.jpg" /></p>
+<p>十一、特殊符号 <img src="/images/特殊符号.jpg" /></p>
+<p><span class="math inline">\(T(n) = \Theta(n)\)</span>, <span class="math inline">\(q \in R\)</span> <span class="math inline">\(x_i^2\)</span>, <span class="math inline">\(e^{10}\)</span>, <span class="math inline">\((x)\)</span>, <span class="math inline">\([x]\)</span>, <span class="math inline">\(\{x\}\)</span> <span class="math inline">\(\sum_1^{\infty}\)</span>, <span class="math inline">\(\int_1^\infty\)</span> <span class="math inline">\(\frac{a}{b}\)</span>, <span class="math inline">\(\sqrt[4]{\frac{x}{y}}\)</span> <span class="math inline">\(\mathcal{A}\)</span> <!--more--></p>
+<p>行内公式： <span class="math inline">\(x_{mu}\)</span>, <span class="math inline">\(\sigma\)</span>, <span class="math inline">\(y=ax+b\)</span>, <span class="math inline">\(\cos 2\theta = \cos^2 \theta - \sin^2 \theta = 2 \cos^2 \theta\)</span>, <span class="math inline">\(M(\beta^{\ast}(D),D) \subseteq C\)</span></p>
+<p>行间公式： <span class="math display">\[ \sum_{i=0}^n i^2 = \frac{(n^2+n)(2n+1)}{6} \]</span></p>
+<p><span class="math display">\[ x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</span></p>
+<p><span class="math display">\[
+f(n) =
+\begin{cases}
+n/2,  &amp; \text{if $n$ is even} \\
+3n+1, &amp; \text{if $n$ is odd}
+\end{cases}
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\begin{split}
+\frac{\partial^2 f}{\partial{x^2}} &amp;= \frac{\partial(\Delta_x f(i,j))}{\partial x} = \frac{\partial(f(i+1,j)-f(i,j))}{\partial x} \\
+&amp;= \frac{\partial f(i+1,j)}{\partial x} - \frac{\partial f(i,j)}{\partial x} \\
+&amp;= f(i+2,j) -2f(f+1,j) + f(i,j)
+\end{split}
+\nonumber
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\begin{matrix}
+1 &amp; x &amp; x^2 \\
+1 &amp; y &amp; y^2 \\
+1 &amp; z &amp; z^2 \\
+\end{matrix}
+\]</span></p>
+<p><span class="math display">\[
+\left(
+    \begin{array}{c}
+      s \\
+      t
+    \end{array}
+\right)
+=
+\left(
+    \begin{array}{cc}
+      cos(b) &amp; -sin(b) \\
+      sin(b) &amp; cos(b)
+    \end{array}
+\right)
+\left(
+    \begin{array}{c}
+      x \\
+      y
+    \end{array}
+\right)
+\]</span></p>
+<p><span class="math display">\[
+\left[
+    \begin{array}{cc|c}
+      1&amp;2&amp;3\\
+      4&amp;5&amp;6
+    \end{array}
+\right] 
+\]</span></p>
+<p><span class="math display">\[
+\begin{equation}
+\sum_{i=0}^n F_i \cdot \phi (H, p_i) - \sum_{i=1}^n a_i \cdot ( \tilde{x_i}, \tilde{y_i}) + b_i \cdot ( \tilde{x_i}^2 , \tilde{y_i}^2 ) \tag{1.2.3}
+\end{equation}
+\]</span></p>
+<p><span class="math display">\[
+\beta^*(D) = \mathop{argmin} \limits_{\beta} \lambda {||\beta||}^2 + \sum_{i=1}^n max(0, 1 - y_i f_{\beta}(x_i)) \tag{我的公式3}
+\]</span> 行内公式：$z = (p_0, ..... , p_n)  $ 第一：$ s = r cos(a+b) = r cos(a) cos(b) - r sin(a) sin(b)  $ $ t = r sin(a+b) = r sin(a) cos(b) - r cos(a) sin(b)  $ <span class="math display">\[
+\begin{equation}
+\sum_{i=0}^n F_i \cdot \phi (H, p_i) - \sum_{i=1}^n a_i \cdot ( \tilde{x_i}, \tilde{y_i}) + b_i \cdot ( \tilde{x_i}^2 , \tilde{y_i}^2 )
+\end{equation}
+\]</span> <span class="math display">\[
+\begin{equation}
+\beta^*(D) = \mathop{argmin} \limits_{\beta} \lambda {||\beta||}^2 + \sum_{i=1}^n max(0, 1 - y_i f_{\beta}(x_i)) 
+\end{equation}
+\]</span> 下标：$ _{i=1} $</p>
 
     
 
     
 
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          swt_2020
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://swt-2020.github.io/2020/10/11/limits/" title="Limit Superior and Limit Inferior" target="_blank">https://swt-2020.github.io/2020/10/11/limits/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
-          
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
     
 
   </div>
   <div class="article-info article-info-index">
     
     
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
     
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/limit-superior//" class="article-tag-list-link color5">limit superior</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/limit-superior/limit-inferior//" class="article-tag-list-link color5">limit inferior</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
     
 
@@ -452,7 +445,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://swt-2020.github.io/2020/10/11/limits/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://swt-2020.github.io/2020/10/03/math-format/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -467,18 +460,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2020/10/17/semi-continuous/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/04/%E5%BC%80%E9%9B%86%E3%80%81%E9%97%AD%E9%9B%86%E6%95%B4%E7%90%86%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          semi-continuous
+          Open set and Close set (1)
         
       </div>
     </a>
   
   
-    <a href="/2020/10/09/Frame/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">FOMO Frame</div>
+    <a href="/2020/09/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
       <i class="icon-circle-right"></i>
     </a>
   
