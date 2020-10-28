@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://swt-2020.github.io">
-  <title>convex set 1 | swt&#39;s blog</title>
+  <title>convex set | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="這篇博客主要归纳总结凸集的相关基本概念和性质，主要参考 Stephen Boyd 的 Convex Optimization, 以及 Dimitri P.Bertsekas 的 Convex Analysis and Optimization 等教材。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="convex set 1">
+<meta property="og:title" content="convex set">
 <meta property="og:url" content="https://swt-2020.github.io/2020/10/22/1/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
 <meta property="og:description" content="這篇博客主要归纳总结凸集的相关基本概念和性质，主要参考 Stephen Boyd 的 Convex Optimization, 以及 Dimitri P.Bertsekas 的 Convex Analysis and Optimization 等教材。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://swt-2020.github.io/images/convex.jpg">
 <meta property="article:published_time" content="2020-10-22T11:22:27.000Z">
-<meta property="article:modified_time" content="2020-10-28T11:19:18.144Z">
+<meta property="article:modified_time" content="2020-10-28T13:34:38.080Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -188,7 +188,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      convex set 1
+      convex set
     </h1>
   
 
@@ -214,7 +214,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.5k字</span>
+      <span class="post-count">2k字</span>
     </span>
   </span>
 
@@ -223,7 +223,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">6分</span>
+      <span class="post-count">9分</span>
     </span>
   </span>
 </div>
@@ -246,22 +246,6 @@
 <p><strong>定义1.3（凸包）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 集合 <span class="math inline">\(C\)</span> 的 <strong>凸包(Convex Hull)</strong> 定义为 <span class="math inline">\(C\)</span> 中任意有限个点的凸组合所构成的集合，记为: <span class="math display">\[conv(C) = \lbrace \sum_{i=1}^k \alpha_i x_i| x_i\in C, \alpha_i\ge 0, i=1,\cdots,k, \sum_{i=1}^k \alpha_i= 1,\forall k \in \mathbb{N}\rbrace.\]</span> <strong>命题1.4（凸包的本质特征）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>, 记 <span class="math inline">\(\lbrace E_\lambda|\lambda\in \Lambda \rbrace\)</span> 为 <span class="math inline">\(\mathbb{R}^n\)</span> 中包含 <span class="math inline">\(C\)</span> 的一切凸集，则集合 <span class="math inline">\(C\)</span> 的凸包 是 <span class="math inline">\(\mathbb{R}^n\)</span> 包含 <span class="math inline">\(C\)</span> 的所有凸集的交，即 <span class="math display">\[conv(C) = \bigcap\limits_{\lambda\in \Lambda}E_\lambda.\]</span> <strong>注：</strong><br />
 1) 凸包 <span class="math inline">\(conv(C)\)</span> 总是凸的，不管 <span class="math inline">\(C\)</span> 是否为凸；<br />
 2) 凸包 <span class="math inline">\(conv(C)\)</span> 是包含 <span class="math inline">\(C\)</span> 的最小凸集, 从而若 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(conv(C) = C\)</span>.</p>
-<p><strong>二、凸集的简单例子</strong></p>
-<ol type="1">
-<li>空集 <span class="math inline">\(\emptyset\)</span>, 单点集 <span class="math inline">\(\lbrace x_0 \rbrace\)</span>, 全空间 <span class="math inline">\(\mathbb{R}^n\)</span>, 任意线性子空间;<br />
-</li>
-<li><span class="math inline">\(\mathbb{R}^n\)</span> 中一条直线，一条线段， 一条射线（形如<span class="math inline">\(\lbrace x_0+\alpha v|\alpha\ge 0\rbrace\)</span>, 其中 <span class="math inline">\(v\ne 0\)</span>）;<br />
-</li>
-<li><strong>超平面</strong> <span class="math inline">\(H = \lbrace x| a^Tx = b\)</span>, 其中 <span class="math inline">\(a\in \mathbb{R}^n, a\ne 0\rbrace\)</span> 且 <span class="math inline">\(b\in \mathbb{R}\)</span>;<br />
-</li>
-<li><strong>半空间</strong> <span class="math inline">\(H^+ = \lbrace x| a^Tx \ge b\)</span> 以及 <span class="math inline">\(H^- = \lbrace x| a^Tx \le b\rbrace\)</span>, 其中 <span class="math inline">\(a\ne 0\)</span>.<br />
-</li>
-<li><strong>多面体</strong> <span class="math inline">\(\mathcal{P} = \lbrace x|Ax \succeq 0, Cx=d\rbrace\)</span>;<br />
-</li>
-<li><strong>Euclid 球</strong> <span class="math inline">\(B(x_c;r) = = \lbrace x \in \mathbb{R}^n: \lVert x-x_c \rVert &lt; r \rbrace\)</span>;<br />
-</li>
-<li><strong>椭球</strong> <span class="math inline">\(\mathcal{E} = \lbrace x| (x-x_c)^TP^{-1}(x-x_c)\le 1\rbrace\)</span>, 其中 <span class="math inline">\(P=P^T \succ 0\)</span>,即 <span class="math inline">\(P\)</span> 是对称正定矩阵。</li>
-</ol>
 <p><strong>二、保凸运算</strong></p>
 <p>这一部分描述一些保凸运算，利用这些运算可以简单验证一个集合是否是凸集，以及可以从一个凸集构造出其他凸集。<br />
 <strong>2.1 凸集的任意交是保凸的</strong><br />
@@ -292,7 +276,24 @@
 （<strong>证明思路：</strong>运用凸集的定义证明即可。）<br />
 若 <span class="math inline">\(m=0\)</span> 时，上述部分和给出令 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 的交集； 若 <span class="math inline">\(n=0\)</span> 时， 上述部分和给出 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 之和。</p>
 <p><strong>三、凸集的基本性质</strong></p>
-<p>这节介绍一些凸集的拓扑性质和一些比较重要的结论。 <strong>命题3.1</strong> 设集合 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(C\)</span> 的闭包 <span class="math inline">\(cl(C)\)</span> 和 内部 <span class="math inline">\(int(C)\)</span> 也是凸集。</p>
+<p>这节介绍一些凸集的拓扑性质和一些比较重要的结论。<br />
+<strong>命题3.1</strong> 设集合 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(C\)</span> 的闭包 <span class="math inline">\(cl(C)\)</span> 和 内部 <span class="math inline">\(int(C)\)</span> 也是凸集。<br />
+<strong>注：</strong> 这里闭包和内部采用记号 <span class="math inline">\(cl(C)\)</span> 和 <span class="math inline">\(int(C)\)</span>，而不是记号 <span class="math inline">\(\overline{C}\)</span> 和 <span class="math inline">\(C^o\)</span>，主要是为了行文方便。</p>
+<p><strong>命题3.2（投影定理）</strong> 设集合 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的<strong>闭凸集</strong>。<br />
+(1) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, <strong>存在唯一</strong>的点 <span class="math inline">\(\pi_C (x)\in C\)</span>, 使得 <span class="math display">\[\lVert x-\pi_C (x)\rVert_2 =  \inf_{y\in C} \lVert x - y\rVert_2.\]</span> 称 <span class="math inline">\(\pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 上的投影.<br />
+(2) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, 则点 <span class="math inline">\(z = \pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 的投影 <strong>当且仅当</strong> <span class="math inline">\(\forall y \in C\)</span> 有 <span class="math inline">\(\langle x-z,y-z\rangle \le 0\)</span>.</p>
+<p><strong>引入一些概念</strong><br />
+<strong>1.超平面:</strong> <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span>, 其中 <span class="math inline">\(a\in \mathbb{R}^n, a\ne 0\rbrace\)</span> 且 <span class="math inline">\(b\in \mathbb{R}\)</span>.<br />
+几何解释：对 <span class="math inline">\(\forall x_o \in \mathcal{H}\)</span>, 则超平面可表示成下面一种形式： <span class="math display">\[ \mathcal{H} = \lbrace x|a^T(x-x_0)=0\rbrace = x_0 + a^\perp, \text{其中} a^\perp=\lbrace v|a^Tv=0\rbrace,\]</span> 可以看出<strong>超平面由 <span class="math inline">\(x_0\)</span> 加上所有正交于法向量 <span class="math inline">\(a\)</span> 的向量构成。</strong></p>
+<p><strong>2.半空间:</strong> 一个超平面将 <span class="math inline">\(\mathbb{R}^n\)</span> 划分成两个(闭)半空间，即 <span class="math display">\[\mathcal{H}^+ = \lbrace x| a^Tx \ge b\rbrace, \ \ \ \ \ \ \mathcal{H}^- = \lbrace x| a^Tx \le b\rbrace,\]</span> 其中 <span class="math inline">\(a\ne 0\)</span>.（至于开半空间无非将上述闭半空间中去掉等号即可。）</p>
+<p><strong>定义3.3</strong> 设 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>, 即 <span class="math inline">\(C\cap D = \emptyset\)</span>, 若存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx\le b,\forall x\in C;\ \ \ a^Tz \ge b, \forall z\in D.\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.<br />
+<strong>注：</strong>从定义可知，并不是任意两个不相交的集合都可以超平面分离，见反例如下：</p>
+<p><strong>定理3.4（凸集分离定理）</strong> 设 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空凸集, 则存在超平面将 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 分离。</p>
+<p>若<strong>定义3.3</strong>中构造的超平面满足更强的条件，即存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx&lt; b,\forall x\in C;\ \ \ a^Tz &gt; b, \forall z\in D,\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>严格分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.<br />
+<strong>注：</strong> 一般情况下，两个不相交的凸集不一定能够被超平面严格分离，即使是闭凸集的情况，也不一定可以严格分离。见反例如下：</p>
+<p><strong>命题3.5（点和闭凸集的严格分离）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是<strong>闭凸集</strong>，<span class="math inline">\(x_0\notin C\)</span>, 则存在超平面<strong>严格分离</strong> <span class="math inline">\(x_0\)</span> 和 <span class="math inline">\(C\)</span>.</p>
+<p><strong>推论3.6</strong> 任意一个<strong>闭凸集</strong> <span class="math inline">\(C\)</span> 都是包含它的所有半空间的交： <span class="math display">\[ C = \bigcap \lbrace \mathcal{H}|\mathcal{H}\text{是半空间}，C\subset \mathcal{H}\rbrace.\]</span></p>
+<p><strong>定理3.7（支撑超平面定理）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集，<span class="math inline">\(x_0\in \partial C\)</span>，则存在 <span class="math inline">\(a\ne 0\)</span> 使得 <span class="math display">\[a^Tx \le a^Tx_0,\forall x\in cl(C).\]</span> <strong>注：</strong> 这时称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = a^Tx_0\rbrace\)</span> 是集合 <span class="math inline">\(C\)</span> 在 <span class="math inline">\(x_0\)</span> 处的<strong>支撑超平面</strong>。</p>
 
     
 
@@ -307,7 +308,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="https://swt-2020.github.io/2020/10/22/1/" title="convex set 1" target="_blank">https://swt-2020.github.io/2020/10/22/1/</a>
+          <a href="https://swt-2020.github.io/2020/10/22/1/" title="convex set" target="_blank">https://swt-2020.github.io/2020/10/22/1/</a>
         </li>
         
         <li>
@@ -342,10 +343,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="/categories/convex-set//" class="article-tag-list-link color1">convex set</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/convex-set/affine-set//" class="article-tag-list-link color1">affine set</a>
         		</li>
       		
 		</ul>
