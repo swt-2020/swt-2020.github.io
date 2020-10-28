@@ -18,8 +18,12 @@
 <meta property="og:description" content="這篇博客主要归纳总结凸集的相关基本概念和性质，主要参考 Stephen Boyd 的 Convex Optimization, 以及 Dimitri P.Bertsekas 的 Convex Analysis and Optimization 等教材。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://swt-2020.github.io/images/convexset.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/convexhull.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/grad.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/con_sep.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/support.jpg">
 <meta property="article:published_time" content="2020-10-22T11:22:27.000Z">
-<meta property="article:modified_time" content="2020-10-28T13:58:39.369Z">
+<meta property="article:modified_time" content="2020-10-28T14:23:38.945Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -214,7 +218,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2k字</span>
+      <span class="post-count">2.1k字</span>
     </span>
   </span>
 
@@ -237,13 +241,15 @@
     <p>這篇博客主要归纳总结凸集的相关基本概念和性质，主要参考 <strong>Stephen Boyd</strong> 的 <strong>Convex Optimization</strong>, 以及 <strong>Dimitri P.Bertsekas</strong> 的 <strong>Convex Analysis and Optimization</strong> 等教材。<a id="more"></a></p>
 <p><strong>一、凸集、凸组合和凸包</strong></p>
 <p><strong>定义1.1（凸集）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 若 <span class="math inline">\(C\)</span> 中任意两点所连的线段仍落在 <span class="math inline">\(C\)</span> 中， 即对 <span class="math inline">\(\forall x_1, x_2 \in C\)</span> 和 <span class="math inline">\(\forall \alpha \in [0,1]\)</span>, 都有 <span class="math display">\[ \alpha x_1 + (1-\alpha) x_2 \in C,\]</span> 则称 <span class="math inline">\(C\)</span> 为 <strong>凸集(Convex Set)</strong>。<br />
-上述定义用图形直观理解如下：（左：凸集， 右：非凸）<br />
-<img src="/images/convexset.jpg" /></p>
+上述定义用<strong>图形直观</strong>描述如下：（左：凸集， 右：非凸）</p>
+<p><img src="/images/convexset.jpg" /></p>
 <p><strong>定义1.2（凸组合）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 称点 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i x_i\)</span> 为 集合 <span class="math inline">\(C\)</span> 中 <span class="math inline">\(x_1,x_2,\cdots,x_k\)</span> 的一个 <strong>凸组合(convex combination)</strong>，其中 <span class="math inline">\(\alpha_i \ge 0,\ i=1,\cdots,k\)</span> 并且 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i= 1\)</span>.<br />
 <strong>注：</strong><br />
 1) 将凸集的定义1.1换种说法得，<span class="math inline">\(C\)</span> 为凸集 当且仅当 <span class="math inline">\(C\)</span> 包含其中任意两点的凸组合。<br />
 2) 通过归纳可得： 如果 <span class="math inline">\(C\)</span> 为凸集，则 <span class="math inline">\(C\)</span> 包含其中任意有限个点的凸组合。</p>
-<p><strong>定义1.3（凸包）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 集合 <span class="math inline">\(C\)</span> 的 <strong>凸包(Convex Hull)</strong> 定义为 <span class="math inline">\(C\)</span> 中任意有限个点的凸组合所构成的集合，记为: <span class="math display">\[conv(C) = \lbrace \sum_{i=1}^k \alpha_i x_i| x_i\in C, \alpha_i\ge 0, i=1,\cdots,k, \sum_{i=1}^k \alpha_i= 1,\forall k \in \mathbb{N}\rbrace.\]</span> <strong>命题1.4（凸包的本质特征）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>, 记 <span class="math inline">\(\lbrace E_\lambda|\lambda\in \Lambda \rbrace\)</span> 为 <span class="math inline">\(\mathbb{R}^n\)</span> 中包含 <span class="math inline">\(C\)</span> 的一切凸集，则集合 <span class="math inline">\(C\)</span> 的凸包 是 <span class="math inline">\(\mathbb{R}^n\)</span> 包含 <span class="math inline">\(C\)</span> 的所有凸集的交，即 <span class="math display">\[conv(C) = \bigcap\limits_{\lambda\in \Lambda}E_\lambda.\]</span> <strong>注：</strong><br />
+<p><strong>定义1.3（凸包）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 集合 <span class="math inline">\(C\)</span> 的 <strong>凸包(Convex Hull)</strong> 定义为 <span class="math inline">\(C\)</span> 中任意有限个点的凸组合所构成的集合，记为: <span class="math display">\[conv(C) = \lbrace \sum_{i=1}^k \alpha_i x_i| x_i\in C, \alpha_i\ge 0, i=1,\cdots,k, \sum_{i=1}^k \alpha_i= 1,\forall k \in \mathbb{N}\rbrace.\]</span> 凸包用<strong>图形直观</strong>理解如下：（左：十五个点构成集合的凸包， 右：肾形集合的凸包）</p>
+<p><img src="/images/convexhull.jpg" /></p>
+<p><strong>命题1.4（凸包的本质特征）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>, 记 <span class="math inline">\(\lbrace E_\lambda|\lambda\in \Lambda \rbrace\)</span> 为 <span class="math inline">\(\mathbb{R}^n\)</span> 中包含 <span class="math inline">\(C\)</span> 的一切凸集，则集合 <span class="math inline">\(C\)</span> 的凸包 是 <span class="math inline">\(\mathbb{R}^n\)</span> 包含 <span class="math inline">\(C\)</span> 的所有凸集的交，即 <span class="math display">\[conv(C) = \bigcap\limits_{\lambda\in \Lambda}E_\lambda.\]</span> <strong>注：</strong><br />
 1) 凸包 <span class="math inline">\(conv(C)\)</span> 总是凸的，不管 <span class="math inline">\(C\)</span> 是否为凸；<br />
 2) 凸包 <span class="math inline">\(conv(C)\)</span> 是包含 <span class="math inline">\(C\)</span> 的最小凸集, 从而若 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(conv(C) = C\)</span>.</p>
 <p><strong>二、保凸运算</strong></p>
@@ -282,6 +288,8 @@
 <p><strong>命题3.2（投影定理）</strong> 设集合 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的<strong>闭凸集</strong>。<br />
 (1) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, <strong>存在唯一</strong>的点 <span class="math inline">\(\pi_C (x)\in C\)</span>, 使得 <span class="math display">\[\lVert x-\pi_C (x)\rVert_2 =  \inf_{y\in C} \lVert x - y\rVert_2.\]</span> 称 <span class="math inline">\(\pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 上的投影.<br />
 (2) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, 则点 <span class="math inline">\(z = \pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 的投影 <strong>当且仅当</strong> <span class="math inline">\(\forall y \in C\)</span> 有 <span class="math inline">\(\langle x-z,y-z\rangle \le 0\)</span>.</p>
+<p><img src="/images/grad.jpg" /><br />
+</p>
 <p><strong>引入一些概念</strong><br />
 <strong>1.超平面:</strong> <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span>, 其中 <span class="math inline">\(a\in \mathbb{R}^n, a\ne 0\rbrace\)</span> 且 <span class="math inline">\(b\in \mathbb{R}\)</span>.<br />
 几何解释：对 <span class="math inline">\(\forall x_o \in \mathcal{H}\)</span>, 则超平面可表示成下面一种形式： <span class="math display">\[ \mathcal{H} = \lbrace x|a^T(x-x_0)=0\rbrace = x_0 + a^\perp, \text{其中} a^\perp=\lbrace v|a^Tv=0\rbrace,\]</span> 可以看出<strong>超平面由 <span class="math inline">\(x_0\)</span> 加上所有正交于法向量 <span class="math inline">\(a\)</span> 的向量构成。</strong></p>
@@ -289,11 +297,14 @@
 <p><strong>定义3.3</strong> 设 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>, 即 <span class="math inline">\(C\cap D = \emptyset\)</span>, 若存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx\le b,\forall x\in C;\ \ \ a^Tz \ge b, \forall z\in D.\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.<br />
 <strong>注：</strong>从定义可知，并不是任意两个不相交的集合都可以超平面分离，见反例如下：</p>
 <p><strong>定理3.4（凸集分离定理）</strong> 设 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空凸集, 则存在超平面将 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 分离。</p>
+<p><img src="/images/con_sep.jpg" /></p>
 <p>若<strong>定义3.3</strong>中构造的超平面满足更强的条件，即存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx&lt; b,\forall x\in C;\ \ \ a^Tz &gt; b, \forall z\in D,\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>严格分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.<br />
 <strong>注：</strong> 一般情况下，两个不相交的凸集不一定能够被超平面严格分离，即使是闭凸集的情况，也不一定可以严格分离。见反例如下：</p>
+<p><strong>命题3.4</strong> 设 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 是两个不相交的非空<strong>闭凸集</strong>，且二者至少有一个是<strong>紧集</strong>，则存在超平面<strong>严格分离</strong> <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.</p>
 <p><strong>命题3.5（点和闭凸集的严格分离）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是<strong>闭凸集</strong>，<span class="math inline">\(x_0\notin C\)</span>, 则存在超平面<strong>严格分离</strong> <span class="math inline">\(x_0\)</span> 和 <span class="math inline">\(C\)</span>.</p>
 <p><strong>推论3.6</strong> 任意一个<strong>闭凸集</strong> <span class="math inline">\(C\)</span> 都是包含它的所有半空间的交： <span class="math display">\[ C = \bigcap \lbrace \mathcal{H}|\mathcal{H}\text{是半空间}，C\subset \mathcal{H}\rbrace.\]</span></p>
 <p><strong>定理3.7（支撑超平面定理）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集，<span class="math inline">\(x_0\in \partial C\)</span>，则存在 <span class="math inline">\(a\ne 0\)</span> 使得 <span class="math display">\[a^Tx \le a^Tx_0,\forall x\in cl(C).\]</span> <strong>注：</strong> 这时称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = a^Tx_0\rbrace\)</span> 是集合 <span class="math inline">\(C\)</span> 在 <span class="math inline">\(x_0\)</span> 处的<strong>支撑超平面</strong>。</p>
+<p><img src="/images/support.jpg" /></p>
 
     
 
