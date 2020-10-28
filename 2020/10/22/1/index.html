@@ -17,13 +17,13 @@
 <meta property="og:site_name" content="swt&#39;s blog">
 <meta property="og:description" content="這篇博客主要归纳总结凸集的相关基本概念和性质，主要参考 Stephen Boyd 的 Convex Optimization, 以及 Dimitri P.Bertsekas 的 Convex Analysis and Optimization 等教材。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://swt-2020.github.io/images/convex.jpg">
+<meta property="og:image" content="https://swt-2020.github.io/images/convexset.jpg">
 <meta property="article:published_time" content="2020-10-22T11:22:27.000Z">
-<meta property="article:modified_time" content="2020-10-28T13:34:38.080Z">
+<meta property="article:modified_time" content="2020-10-28T13:58:39.369Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://swt-2020.github.io/images/convex.jpg">
+<meta name="twitter:image" content="https://swt-2020.github.io/images/convexset.jpg">
   
     <link rel="alternative" href="/atom.xml" title="swt&#39;s blog" type="application/atom+xml">
   
@@ -238,7 +238,7 @@
 <p><strong>一、凸集、凸组合和凸包</strong></p>
 <p><strong>定义1.1（凸集）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 若 <span class="math inline">\(C\)</span> 中任意两点所连的线段仍落在 <span class="math inline">\(C\)</span> 中， 即对 <span class="math inline">\(\forall x_1, x_2 \in C\)</span> 和 <span class="math inline">\(\forall \alpha \in [0,1]\)</span>, 都有 <span class="math display">\[ \alpha x_1 + (1-\alpha) x_2 \in C,\]</span> 则称 <span class="math inline">\(C\)</span> 为 <strong>凸集(Convex Set)</strong>。<br />
 上述定义用图形直观理解如下：（左：凸集， 右：非凸）<br />
-<img src="/images/convex.jpg" /></p>
+<img src="/images/convexset.jpg" /></p>
 <p><strong>定义1.2（凸组合）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 称点 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i x_i\)</span> 为 集合 <span class="math inline">\(C\)</span> 中 <span class="math inline">\(x_1,x_2,\cdots,x_k\)</span> 的一个 <strong>凸组合(convex combination)</strong>，其中 <span class="math inline">\(\alpha_i \ge 0,\ i=1,\cdots,k\)</span> 并且 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i= 1\)</span>.<br />
 <strong>注：</strong><br />
 1) 将凸集的定义1.1换种说法得，<span class="math inline">\(C\)</span> 为凸集 当且仅当 <span class="math inline">\(C\)</span> 包含其中任意两点的凸组合。<br />
