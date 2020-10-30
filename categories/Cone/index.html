@@ -6,21 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://swt-2020.github.io">
-  <title>Affine Set | swt&#39;s blog</title>
+  <title>Category: Cone | swt&#39;s blog</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="上一篇介绍了凸集及其相关性质，这节介绍一类特殊的凸集：仿射集，在此基础上引出仿射组合、仿射包的概念，然后介绍集合的一种特殊的拓扑结构：相对内部。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Affine Set">
-<meta property="og:url" content="https://swt-2020.github.io/2020/10/29/set/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="swt&#39;s blog">
+<meta property="og:url" content="https://swt-2020.github.io/categories/Cone/index.html">
 <meta property="og:site_name" content="swt&#39;s blog">
-<meta property="og:description" content="上一篇介绍了凸集及其相关性质，这节介绍一类特殊的凸集：仿射集，在此基础上引出仿射组合、仿射包的概念，然后介绍集合的一种特殊的拓扑结构：相对内部。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-10-29T07:25:35.000Z">
-<meta property="article:modified_time" content="2020-10-30T11:51:25.990Z">
 <meta property="article:author" content="swt_2020">
-<meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="swt&#39;s blog" type="application/atom+xml">
@@ -179,144 +174,41 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-set" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
+            
+  
+  
     
-      <header class="article-header">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/10/30/Cone/" class="archive-article-date">
+        <time datetime="2020-10-30T11:25:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-30</time>
+</a>
+
+        </div>
+    	 
   
+    <h1 itemprop="name">
+	
+	  <a class="archive-article-title" href="/2020/10/30/Cone/" target="_blank">Cone</a>
   
-    <h1 class="article-title" itemprop="name">
-      Affine Set
     </h1>
   
 
 
-  
-  
-        
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/10/29/set/" class="archive-article-date">
-        <time datetime="2020-10-29T07:25:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-29</time>
-</a>
-
-  
-  
-    
-<div style="margin-top:10px;">
-  <span class="post-time">
-    <span class="post-meta-item-icon">
-      <!-- fonts.scss -->
-      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
-      <i class="icon-statistics"></i>
-      <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">1.8k字</span>
-    </span>
-  </span>
-
-  <span class="post-time">
-    &nbsp; | &nbsp;
-    <span class="post-meta-item-icon">
-      <i class="icon-book icon"></i>
-      <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">8分</span>
-    </span>
-  </span>
-</div>
-
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>上一篇介绍了凸集及其相关性质，这节介绍一类特殊的凸集：仿射集，在此基础上引出仿射组合、仿射包的概念，然后介绍集合的一种特殊的拓扑结构：相对内部。<a id="more"></a></p>
-<p><strong>一、仿射集、仿射组合和仿射包</strong></p>
-<p><strong>定义1.1（仿射集）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 若 <span class="math inline">\(C\)</span> 中任意两个不同点的直线仍然落在集合 <span class="math inline">\(C\)</span> 中， 即对 <span class="math inline">\(\forall x_1, x_2 \in C\)</span> 和 <span class="math inline">\(\alpha \in \mathbb{R}\)</span>, 都有 <span class="math display">\[ \alpha x_1 + (1-\alpha) x_2 \in C,\]</span> 则称 <span class="math inline">\(C\)</span> 为 <strong>仿射集(Affine Set)</strong>.<br />
-<strong>注：</strong> 从仿射集的定义可知，仿射集都是凸集。</p>
-<p><strong>定义1.2（仿射组合）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 称点 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i x_i\)</span> 为 集合 <span class="math inline">\(C\)</span> 中 <span class="math inline">\(x_1,x_2,\cdots,x_k\)</span> 的一个 <strong>仿射组合(Affine Combination)</strong>，其中 <span class="math inline">\(\alpha_i \in \mathbb{R},\ i=1,\cdots,k\)</span> 以及 <span class="math inline">\(\sum\limits_{i=1}^k \alpha_i= 1\)</span>.   <strong>注：</strong><br />
-1) 利用仿射集合的定义得，<span class="math inline">\(C\)</span> 为仿射集 当且仅当 <span class="math inline">\(C\)</span> 包含其中任意两点的仿射组合。<br />
-2) 通过归纳可得： 如果 <span class="math inline">\(C\)</span> 为仿射集，则 <span class="math inline">\(C\)</span> 包含其中任意有限个点的仿射组合（即 <span class="math inline">\(x_1,x_2,\cdots,x_k \in C\)</span>, 并且 <span class="math inline">\(\alpha_1+\cdots+\alpha_k = 1\)</span>, 则 <span class="math inline">\(\alpha_1x_1+\cdots+\alpha_k x_k\)</span> 仍然在 <span class="math inline">\(C\)</span> 中。）</p>
-<p><strong>定义1.3（仿射包）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>. 集合 <span class="math inline">\(C\)</span> 的 <strong>仿射包(Affine Hull)</strong> 定义为 <span class="math inline">\(C\)</span> 中任意有限个点的仿射组合所构成的集合，记为 <span class="math inline">\(\mathrm{aff}(C)\)</span>: <span class="math display">\[\mathrm{aff}(C) = \lbrace \sum_{i=1}^k \alpha_i x_i| x_i\in C,  i=1,\cdots,k, \sum_{i=1}^k \alpha_i= 1,\forall k \in \mathbb{N}\rbrace.\]</span></p>
-<p><strong>命题1.4（仿射包的本质特征）</strong> 设集合 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>, 集合 <span class="math inline">\(C\)</span> 的凸包 是 <span class="math inline">\(\mathbb{R}^n\)</span> 包含 <span class="math inline">\(C\)</span> 的所有凸集的交，即 <span class="math display">\[\mathrm{aff}(C) = \bigcap\lbrace \mathcal{A}|\mathcal{A}\text{是仿射集}, C\subset \mathcal{A} \rbrace.\]</span> <strong>注：</strong><br />
-1) 仿射包 <span class="math inline">\(\mathrm{aff}(C)\)</span> 总是仿射集，不管 <span class="math inline">\(C\)</span> 是否为仿射集；<br />
-2) 仿射包 <span class="math inline">\(\mathrm{aff}(C)\)</span> 是包含 <span class="math inline">\(C\)</span> 的最小仿射集;<br />
-3) 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>，<span class="math inline">\(\mathrm{conv}(C)\subset \mathrm{aff}(C)\)</span>;<br />
-4) 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span>，<span class="math inline">\(\mathrm{aff}(C) = \mathrm{aff}(\mathrm{conv}(C)) = \mathrm{aff}(\mathrm{cl}(C))\)</span>;</p>
-<p><strong>二、仿射集的基本特征</strong></p>
-<p><strong>定义2.1（仿射集的关联子空间）</strong> 设 <span class="math inline">\(C\)</span> 是一个仿射集合， <span class="math inline">\(\forall x_0 \in C\)</span>, 则 <span class="math display">\[ V = C-x_0 = \lbrace x-x_0|x\in C\rbrace\]</span> 是一个线性子空间（简单验证 <span class="math inline">\(V\)</span> 对加法、数乘封闭），并称 <span class="math inline">\(V\)</span> 是仿射集 <span class="math inline">\(C\)</span> 相关联的子空间。<br />
-因此，可将仿射集 <span class="math inline">\(C\)</span> 换一种表示形式： <span class="math inline">\(C = V + x_0 = \lbrace v+x_0|v\in V\rbrace\)</span>, 其中 <span class="math inline">\(x_0\)</span> 可以是 <span class="math inline">\(C\)</span> 中的任意一点。<br />
-<strong>注：</strong><br />
-(1) 给定一个仿射集 <span class="math inline">\(C\)</span>, 与它相关联的子空间 <span class="math inline">\(V\)</span> 是唯一的。<br />
-(2) 定义仿射集 <span class="math inline">\(C\)</span> 的<strong>维数</strong>为子空间 <span class="math inline">\(V = C-x_0\)</span> 的维数，由注(1)可知仿射集<strong>维数</strong>的定义是 well-defined;<br />
-(3) 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是仿射集, 若 <span class="math inline">\(0\in C\)</span>, 则 <span class="math inline">\(C\)</span> 本身就是一个线性子空间。进一步推广得，设 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的一子集，若 <span class="math inline">\(0\in D\)</span>, 则 <span class="math inline">\(\mathrm{aff}(D)\)</span> 是一个线性子空间;<br />
-(4) 设 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的一子集（不必是仿射集），<span class="math inline">\(C\)</span> 的<strong>仿射维数</strong>定义为仿射包 <span class="math inline">\(\mathrm{aff}(C)\)</span> 的维数。【由于仿射包是仿射集，仿射包的维数即是与仿射包相关联的子空间的维数】</p>
-<p><strong>三、相对内部</strong></p>
-<p><strong>定义3.1（相对内部）</strong> 设集合 <span class="math inline">\(C\in \mathbb{R}^n\)</span>, 称 <span class="math inline">\(x\)</span> 是集合 <span class="math inline">\(C\)</span> 的<strong>相对内点</strong>，若 <span class="math inline">\(x\in C\)</span> 以及存在 <span class="math inline">\(r&gt;0\)</span> 使得 <span class="math inline">\(B(x;r)\cap \mathrm{aff}(C) \subset C\)</span>, 即 <span class="math inline">\(x\)</span> 是集合 <span class="math inline">\(C\)</span> 相对于 <span class="math inline">\(\mathrm{aff}(C)\)</span> 的内点。<br />
-记 <span class="math display">\[\mathrm{ri}(C) = \lbrace C\text{的所有相对内点}\rbrace = \lbrace x\in C|\ \exists r&gt;0,s.t. B(x;r)\cap \mathrm{aff}(C) \subset C\rbrace,\]</span> 称 <span class="math inline">\(\mathrm{ri}(C)\)</span> 为 <span class="math inline">\(C\)</span> 的<strong>相对内部</strong>。<br />
-<strong>注：</strong> 集合的相对内部推广了内部等拓扑性质，一个集合可能内部为空，但相对内部仍然存在。最典型的例子：对凸集而言，内部可能为空，如例1所示，但相对内部非空（这一性质非常重要，下一节重点介绍）。</p>
-<p><strong>例1</strong> 考虑 <span class="math inline">\(\mathbb{R}^3\)</span> 中的位于 <span class="math inline">\((x_1,x_2)\)</span> 平面的一个圆，即 <span class="math display">\[C = \lbrace x\in \mathbb{R}^3|\ x_1^2+x_2^2\le 1,x_3=0\rbrace.\]</span> 在 <span class="math inline">\(\mathbb{R}^3\)</span> 中，<span class="math inline">\(\mathrm{aff}(C) = \lbrace x\in\mathbb{R}^3|\ x_3=0\rbrace\)</span>, 其中 <span class="math inline">\(\mathrm{int}(C) = \emptyset\)</span>, 但 <span class="math inline">\(\mathrm{ri}(C) = \lbrace x\in \mathbb{R}^3|\ x_1^2+x_2^2 &lt; 1,x_3=0\rbrace\)</span>.</p>
-<p><strong>四、凸集+相对内部</strong></p>
-<p>这一部分主要研究对非空凸集而言，考虑其相对内部所具有的基本性质。</p>
-<p><strong>定理4.1（线段原理）</strong><br />
-设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集，若 <span class="math inline">\(x\in \mathrm{ri}(C)\)</span>, <span class="math inline">\(y\in \mathrm{cl}(C)\)</span>, 则对 <span class="math inline">\(\forall\ 0&lt; \alpha\le 1\)</span>, 有 <span class="math inline">\(\alpha x + (1-\alpha)y \in \mathrm{ri}(C)\)</span>, 换言之，连接 <span class="math inline">\(x\)</span> 和 <span class="math inline">\(y\)</span> 的线段，除 <span class="math inline">\(y\)</span> 点外的所有点都属于 <span class="math inline">\(\mathrm{ri}(C)\)</span>.<br />
-<strong>注：</strong> <span class="math inline">\(y\)</span> 点不一定在 <span class="math inline">\(\mathrm{ri}(C)\)</span> 中，见下述例子： 取 <span class="math inline">\(\mathbb{R}^2\)</span> 中的闭区间 <span class="math inline">\([a,b]\)</span>, 则 <span class="math inline">\(\mathrm{ri}(C) = (a,b)\)</span>, 这时取 <span class="math inline">\(y = b\)</span> 即可。</p>
-<p><strong>推论4.2（相对内部的非空性）</strong><br />
-设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集, 则 <span class="math inline">\(\mathrm{ri}(C)\)</span> 是非空凸集，且 <span class="math inline">\(\mathrm{aff}(\mathrm{ri}(C)) = \mathrm{aff}(C)\)</span>.</p>
-<p><strong>定理4.3（延拓原理）</strong><br />
-设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集, 则 <span class="math inline">\(x\in \mathrm{ri}(C)\)</span> 当且仅当 以 <span class="math inline">\(x\)</span> 点为端点，沿着凸集 <span class="math inline">\(C\)</span> 内的任一线段延长一小段后仍属于 <span class="math inline">\(C\)</span>, 即 <span class="math inline">\(\forall y\in C\)</span>, 存在 <span class="math inline">\(\alpha &gt;0\)</span>, 使得 <span class="math inline">\(x + \alpha (x-y) \in C\)</span>.</p>
-<p>接下来将凸集的相对内部和闭包联系起来，给出下列运算规则：</p>
-<p><strong>命题4.4</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集，则<br />
-(1) <span class="math inline">\(\mathrm{cl}(C) = \mathrm{cl}(\mathrm{ri}(C))\)</span>;<br />
-(2) <span class="math inline">\(\mathrm{ri}(C) = \mathrm{ri}(\mathrm{cl}(C))\)</span>;<br />
-(3) 设 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中另一个非空凸集，则下述三个命题等价：<br />
-1. <span class="math inline">\(\mathrm{ri}(C) = \mathrm{ri}(D)\)</span>;<br />
-2. <span class="math inline">\(\mathrm{cl}(C) = \mathrm{cl}(D)\)</span>;<br />
-3. <span class="math inline">\(\mathrm{ri}(C) \subset D \subset \mathrm{cl}(C)\)</span>.</p>
-<p><strong>命题4.5</strong> 设 <span class="math inline">\(C\)</span>和 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个非空凸集，则<br />
-(a) <span class="math inline">\(\mathrm{ri}(C) \cap \mathrm{ri}(D) \subset \mathrm{ri}(C\cap D)\)</span>,    <span class="math inline">\(\mathrm{cl}(C\cap D) \subset \mathrm{cl}(C) \cap \mathrm{cl}(D)\)</span>;<br />
-进一步，若 <span class="math inline">\(\mathrm{ri}(C) \cap \mathrm{ri}(D) \ne \emptyset\)</span>, 则 <span class="math inline">\(\mathrm{ri}(C\cap D) = \mathrm{ri}(C) \cap \mathrm{ri}(D)\)</span>,    <span class="math inline">\(\mathrm{cl}(C\cap D) = \mathrm{cl}(C) \cap \mathrm{cl}(D)\)</span>.<br />
-(b) <span class="math inline">\(\mathrm{ri}(C+D) = \mathrm{ri}(C) + \mathrm{ri}(D)\)</span>,   <span class="math inline">\(\mathrm{cl}(C) + \mathrm{cl}(D) \subset \mathrm{cl}(C\cap D)\)</span>;<br />
-进一步，若 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 两集合中至少有一个是有界的，则 <span class="math inline">\(\mathrm{cl}(C) + \mathrm{cl}(D) =\mathrm{cl}(C\cap D)\)</span>.<br />
-(c) <span class="math inline">\(\mathrm{ri}(C\times D) = \mathrm{ri}(C) \times \mathrm{ri}(D)\)</span>,    <span class="math inline">\(\mathrm{cl}(C\times D) = \mathrm{cl}(C) \times \mathrm{cl}(D)\)</span>.</p>
-<p>设集合 <span class="math inline">\(X\subset \mathbb{R}^n\)</span>, <span class="math inline">\(A\in \mathbb{R}^{m\times n}\)</span>, <span class="math inline">\(X\)</span> 在 <span class="math inline">\(A\)</span> 下的像为 <span class="math display">\[A\cdot X = \lbrace Ax|\ x\in X\rbrace\]</span> 设集合 <span class="math inline">\(Y\subset \mathbb{R}^m\)</span>, <span class="math inline">\(A\in \mathbb{R}^{m\times n}\)</span>, 则 <span class="math inline">\(Y\)</span> 在 <span class="math inline">\(A\)</span> 下的原像为 <span class="math display">\[A^{-1}\cdot Y = \lbrace x|\ Ax\in Y\rbrace\]</span></p>
-<p><strong>命题4.6</strong> 设 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的非空凸集，<span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^m\)</span> 中的非空凸集，<span class="math inline">\(A\in \mathbb{R}^{m\times n}\)</span>, 则<br />
-(i) <span class="math inline">\(A\cdot \mathrm{ri}(C) = \mathrm{ri}(A\cdot C)\)</span>;<br />
-(ii) <span class="math inline">\(A\cdot \mathrm{cl}(C) \subset \mathrm{cl}(A\cdot C)\)</span>, 进一步，若 <span class="math inline">\(C\)</span> 是有界集，则 <span class="math inline">\(A\cdot \mathrm{cl}(C) = \mathrm{cl}(A\cdot C)\)</span>.<br />
-(iii) <span class="math inline">\(A^{-1}\cdot \mathrm{ri}(D) = \mathrm{ri}(A^{-1}\cdot D)\)</span>,   <span class="math inline">\(A^{-1}\cdot \mathrm{cl}(D) = \mathrm{cl}(A^{-1}\cdot D)\)</span>.</p>
-
-    
-
-    
-
-    
-    <div class="declare"> 
-      <ul class="post-copyright">
-        <li>
-          <strong>本文作者：</strong>
-          swt_2020
-        </li>
-        <li>
-          <strong>本文链接：</strong>
-          <a href="https://swt-2020.github.io/2020/10/29/set/" title="Affine Set" target="_blank">https://swt-2020.github.io/2020/10/29/set/</a>
-        </li>
-        
-        <li>
-          <strong>版权声明： </strong>
+        <div class="article-info info-on-right">
           
-          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
-        </li>
-        
-      </ul>
-    </div>
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -328,131 +220,34 @@
 		</ul>
 	</div>
 
-    
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/affine-set//" class="article-tag-list-link color1">affine set</a>
+        			<a href="/categories/Cone//" class="article-tag-list-link color5">Cone</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="/categories/affine-set/relative-interior//" class="article-tag-list-link color3">relative interior</a>
+        			<a href="/categories/Cone/Convex-Cone//" class="article-tag-list-link color2">Convex Cone</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
-    
-
-    
-    
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a> -->
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://swt-2020.github.io/2020/10/29/set/" alt="微信分享二维码"> -->
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-    
-    <div class="clearfix"></div>
-  </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-
-<nav id="article-nav">
-  
-    <a href="/2020/10/30/Cone/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Cone
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/10/22/1/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Convex Set</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
           </div>
@@ -493,10 +288,10 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
-		isCategory: false,
+		isCategory: true,
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
