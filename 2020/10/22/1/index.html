@@ -19,11 +19,8 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://swt-2020.github.io/images/convexset.jpg">
 <meta property="og:image" content="https://swt-2020.github.io/images/convexhull.jpg">
-<meta property="og:image" content="https://swt-2020.github.io/images/grad.jpg">
-<meta property="og:image" content="https://swt-2020.github.io/images/con_sep.jpg">
-<meta property="og:image" content="https://swt-2020.github.io/images/support.jpg">
 <meta property="article:published_time" content="2020-10-22T11:22:27.000Z">
-<meta property="article:modified_time" content="2020-10-30T11:51:33.861Z">
+<meta property="article:modified_time" content="2020-11-07T03:38:52.334Z">
 <meta property="article:author" content="swt_2020">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -218,7 +215,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.1k字</span>
+      <span class="post-count">1.3k字</span>
     </span>
   </span>
 
@@ -227,7 +224,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">9分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -281,30 +278,9 @@
 2) <strong>（凸集的部分和是凸集）</strong> 若 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 是 <span class="math inline">\(\mathbb{R}^{n}\times \mathbb{R}^m\)</span> 中的凸集， 则部分和 <span class="math inline">\(S = \lbrace x,y_1+y_2|(x,y_1)\in C_1, (x,y_2)\in C_2\rbrace\)</span> 也是凸集，其中 <span class="math inline">\(x\in \mathbb{R}^n，y_1,y_2\in \mathbb{R}^m\)</span>.<br />
 （<strong>证明思路：</strong>运用凸集的定义证明即可。）<br />
 若 <span class="math inline">\(m=0\)</span> 时，上述部分和给出令 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 的交集； 若 <span class="math inline">\(n=0\)</span> 时， 上述部分和给出 <span class="math inline">\(C_1\)</span> 和 <span class="math inline">\(C_2\)</span> 之和。</p>
-<p><strong>三、凸集的基本性质</strong></p>
-<p>这节介绍一些凸集的拓扑性质和一些比较重要的结论。<br />
-<strong>命题3.1</strong> 设集合 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(C\)</span> 的闭包 <span class="math inline">\(\mathrm{cl}(C)\)</span> 和 内部 <span class="math inline">\(\mathrm{int}(C)\)</span> 也是凸集。<br />
+<p><strong>2.4 凸集拓扑性质</strong><br />
+设集合 <span class="math inline">\(C\)</span> 是凸集，则 <span class="math inline">\(C\)</span> 的闭包 <span class="math inline">\(\mathrm{cl}(C)\)</span> 和 内部 <span class="math inline">\(\mathrm{int}(C)\)</span> 也是凸集。<br />
 <strong>注：</strong> 这里闭包和内部采用记号 <span class="math inline">\(\mathrm{cl}(C)\)</span> 和 <span class="math inline">\(\mathrm{int}(C)\)</span>，而不是记号 <span class="math inline">\(\overline{C}\)</span> 和 <span class="math inline">\(C^o\)</span>，主要是为了行文方便。</p>
-<p><strong>命题3.2（投影定理）</strong> 设集合 <span class="math inline">\(C\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中的<strong>闭凸集</strong>。<br />
-(1) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, <strong>存在唯一</strong>的点 <span class="math inline">\(\pi_C (x)\in C\)</span>, 使得 <span class="math display">\[\lVert x-\pi_C (x)\rVert_2 =  \inf_{y\in C} \lVert x - y\rVert_2.\]</span> 称 <span class="math inline">\(\pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 上的投影.<br />
-(2) 对 <span class="math inline">\(\forall x\in \mathbb{R}^n\)</span>, 则点 <span class="math inline">\(z = \pi_C (x)\)</span> 是 <span class="math inline">\(x\)</span> 到 <span class="math inline">\(C\)</span> 的投影 <strong>当且仅当</strong> <span class="math inline">\(\forall y \in C\)</span> 有 <span class="math inline">\(\langle x-z,y-z\rangle \le 0\)</span>.</p>
-<p><img src="/images/grad.jpg" /><br />
-</p>
-<p><strong>引入一些概念</strong><br />
-<strong>1.超平面:</strong> <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span>, 其中 <span class="math inline">\(a\in \mathbb{R}^n, a\ne 0\rbrace\)</span> 且 <span class="math inline">\(b\in \mathbb{R}\)</span>.<br />
-几何解释：对 <span class="math inline">\(\forall x_o \in \mathcal{H}\)</span>, 则超平面可表示成下面一种形式： <span class="math display">\[ \mathcal{H} = \lbrace x|a^T(x-x_0)=0\rbrace = x_0 + a^\perp, \text{其中} a^\perp=\lbrace v|a^Tv=0\rbrace,\]</span> 可以看出<strong>超平面由 <span class="math inline">\(x_0\)</span> 加上所有正交于法向量 <span class="math inline">\(a\)</span> 的向量构成。</strong></p>
-<p><strong>2.半空间:</strong> 一个超平面将 <span class="math inline">\(\mathbb{R}^n\)</span> 划分成两个(闭)半空间，即 <span class="math display">\[\mathcal{H}^+ = \lbrace x| a^Tx \ge b\rbrace, \ \ \ \ \ \ \mathcal{H}^- = \lbrace x| a^Tx \le b\rbrace,\]</span> 其中 <span class="math inline">\(a\ne 0\)</span>.（至于开半空间无非将上述闭半空间中去掉等号即可。）</p>
-<p><strong>定义3.3</strong> 设 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>, 即 <span class="math inline">\(C\cap D = \emptyset\)</span>, 若存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx\le b,\forall x\in C;\ \ \ a^Tz \ge b, \forall z\in D.\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.</p>
-<p><strong>定理3.4（凸集分离定理）</strong> 设 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 是 <span class="math inline">\(\mathbb{R}^n\)</span> 中两个不相交的非空凸集, 则存在超平面将 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 分离。</p>
-<p><img src="/images/con_sep.jpg" /></p>
-<p>若<strong>定义3.3</strong>中构造的超平面满足更强的条件，即存在 <span class="math inline">\(a\ne 0\)</span> 和 <span class="math inline">\(b\)</span> 使得 <span class="math display">\[ a^Tx&lt; b,\forall x\in C;\ \ \ a^Tz &gt; b, \forall z\in D,\]</span> 则称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = b\rbrace\)</span> <strong>严格分离</strong>集合 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.<br />
-<strong>注：</strong> 一般情况下，两个不相交的凸集不一定能够被超平面严格分离，即使是闭凸集的情况，也不一定可以严格分离。见反例如下：<br />
-取 <span class="math inline">\(\mathbb{R}^n\)</span> 中的集合 <span class="math inline">\(C = \lbrace (x,y)|xy\ge 1,x,y&gt;0\)</span>, <span class="math inline">\(D = \lbrace (x,y)|x\le 0\rbrace\)</span> 即可。</p>
-<p><strong>命题3.5</strong> 设 <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span> 是两个不相交的非空<strong>闭凸集</strong>，且二者至少有一个是<strong>紧集</strong>，则存在超平面<strong>严格分离</strong> <span class="math inline">\(C\)</span> 和 <span class="math inline">\(D\)</span>.</p>
-<p><strong>命题3.6（点和闭凸集的严格分离）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是<strong>闭凸集</strong>，<span class="math inline">\(x_0\notin C\)</span>, 则存在超平面<strong>严格分离</strong> <span class="math inline">\(x_0\)</span> 和 <span class="math inline">\(C\)</span>.</p>
-<p><strong>推论3.7</strong> 任意一个<strong>闭凸集</strong> <span class="math inline">\(C\)</span> 都是包含它的所有半空间的交： <span class="math display">\[ C = \bigcap \lbrace \mathcal{H}|\mathcal{H}\text{是半空间}，C\subset \mathcal{H}\rbrace.\]</span></p>
-<p><strong>定理3.8（支撑超平面定理）</strong> 设 <span class="math inline">\(C\subset \mathbb{R}^n\)</span> 是非空凸集，<span class="math inline">\(x_0\in \partial C\)</span>，则存在 <span class="math inline">\(a\ne 0\)</span> 使得 <span class="math display">\[a^Tx \le a^Tx_0,\forall x\in cl(C).\]</span> <strong>注：</strong> 这时称超平面 <span class="math inline">\(\mathcal{H} = \lbrace x| a^Tx = a^Tx_0\rbrace\)</span> 是集合 <span class="math inline">\(C\)</span> 在 <span class="math inline">\(x_0\)</span> 处的<strong>支撑超平面</strong>。</p>
-<p><img src="/images/support.jpg" /></p>
 
     
 
